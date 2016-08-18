@@ -15,6 +15,7 @@ public:
 	Game();
 	~Game();
 	int Initialize();
+	void update();
 	void Start();
 
 private:

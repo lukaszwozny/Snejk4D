@@ -22,6 +22,11 @@ int Game::Initialize()
 	return 0;
 }
 
+void Game::update()
+{
+
+}
+
 void Game::Start()
 {
 	// Ensure we can capture the escape key being pressed below
@@ -32,6 +37,9 @@ void Game::Start()
 		glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		update();
+
 		// Swap buffers
 		glfwSwapBuffers(window);
 		glfwPollEvents();
