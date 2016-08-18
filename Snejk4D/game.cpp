@@ -2,18 +2,9 @@
 #include <cstdio>
 #include <ostream>
 #include <iostream>
+#include "MainMenuScreen.h"
 
 GameStateEnum Game::game_state_enum = MENU;
-
-Game::Game()
-{
-	
-}
-
-
-Game::~Game()
-{
-}
 
 int Game::Initialize()
 {
@@ -24,9 +15,27 @@ int Game::Initialize()
 	return 0;
 }
 
+void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
+{
+	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+		if (Game::game_state_enum == MENU)
+			std::cout << "Click.";
+	}
+}
+
 void Game::update()
 {
-
+//	MainMenuScreen* menu_screen = new MainMenuScreen();
+	switch (game_state_enum)
+	{
+	case MENU:
+		glfwSetMouseButtonCallback(window, MouseButtonCallback);
+		break;
+	case OPTIONS: break;
+	case PLAY_GAME: break;
+	case EXIT: break;
+	default: break;
+	}
 }
 
 void Game::Start()

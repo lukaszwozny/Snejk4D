@@ -120,12 +120,16 @@
   <ItemGroup>
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuScreen.cpp" />
+    <ClCompile Include="ScreenService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraStateEnum.h" />
     <ClInclude Include="CollisionEnum.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="GameStateEnum.h" />
+    <ClInclude Include="MainMenuScreen.h" />
+    <ClInclude Include="ScreenService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

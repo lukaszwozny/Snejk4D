@@ -16,6 +16,24 @@
     <Filter Include="Header Files\enums">
       <UniqueIdentifier>{ab89a9cd-b4ad-42a4-b408-4a0bacf109e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\managers">
+      <UniqueIdentifier>{2842fe38-ed30-4499-98d1-58cb9a32c79a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\managers">
+      <UniqueIdentifier>{05a04adf-067c-4fb1-9ea1-d51c53a2062f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\services">
+      <UniqueIdentifier>{60532a14-edf2-4a0d-81ca-bc63c8b984ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\services">
+      <UniqueIdentifier>{b8fcc274-89b1-4324-9921-3d67fde370e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\screens">
+      <UniqueIdentifier>{35e53d0a-1586-4731-b0a5-a9aa62a1d478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\screens">
+      <UniqueIdentifier>{62902431-c658-40ae-9445-c3b208dcd168}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -23,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenService.cpp">
+      <Filter>Source Files\services</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuScreen.cpp">
+      <Filter>Source Files\screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +61,12 @@
     </ClInclude>
     <ClInclude Include="CollisionEnum.h">
       <Filter>Header Files\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenService.h">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuScreen.h">
+      <Filter>Header Files\screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

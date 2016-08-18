@@ -15,8 +15,6 @@ class Game
 public:
 	static GameStateEnum game_state_enum;
 
-	Game();
-	~Game();
 	int Initialize();
 	void update();
 	void Start();
