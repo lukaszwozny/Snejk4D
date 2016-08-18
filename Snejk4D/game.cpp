@@ -3,9 +3,11 @@
 #include <ostream>
 #include <iostream>
 
+GameStateEnum Game::game_state_enum = MENU;
+
 Game::Game()
 {
-	initGLFW();
+	
 }
 
 
