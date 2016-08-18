@@ -26,50 +26,10 @@ void Game::Start()
 {
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-	float color_red = 0;
-	float color_green = 0;
-	float color_blue = 0;
-	bool more_red = true;
-	bool more_green = true;
-	bool more_blue = true;
 	do
 	{
-		int random = rand() % 3;
-		switch (random)
-		{
-		case 0:
-			if (color_red > 1)
-				more_red = false;
-			if (color_red < 0)
-				more_red = true;
-			if (more_red)
-				color_red += 0.01f;
-			else
-				color_red -= 0.01f;
-			break;
-		case 1:
-			if (color_green > 1)
-				more_green = false;
-			if (color_green < 0)
-				more_green = true;
-			if (more_green)
-				color_green += 0.01f;
-			else
-				color_green -= 0.01f;
-			break;
-		case 2:
-			if (color_blue > 1)
-				more_blue = false;
-			if (color_blue < 0)
-				more_blue = true;
-			if (more_blue)
-				color_blue += 0.01f;
-			else
-				color_blue -= 0.01f;
-			break;
-		}
 		// Dark blue background
-		glClearColor(color_red, color_green, color_blue, 0.0f);
+		glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		// Swap buffers
