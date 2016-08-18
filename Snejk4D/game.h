@@ -15,6 +15,7 @@ public:
 	Game();
 	~Game();
 	int Initialize();
+	void Start();
 
 private:
 	GLFWwindow* window;
