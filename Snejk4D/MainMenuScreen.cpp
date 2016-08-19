@@ -36,10 +36,10 @@ GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)
 	glfwGetCursorPos(window, &mouse_x, &mouse_y);
 
 	//render Game
-	int left = 1024 / 2 * 0.5f;
-	int right = 1024 - 0.5f * 1024 / 2;
-	int up = (1.0f - 0.4f) * 768 / 2 + 51.0f / 2.0f;
-	int down = (1.0f - 0.4f) * 768 / 2 - 51.0f / 2.0f;
+	float left = 1024 / 2 * 0.5f;
+	float right = 1024 - 0.5f * 1024 / 2;
+	float up = (1.0f - 0.4f) * 768 / 2 + 51.0f / 2.0f;
+	float down = (1.0f - 0.4f) * 768 / 2 - 51.0f / 2.0f;
 
 	if (mouse_x > left && mouse_x < right
 		&& mouse_y > down && mouse_y < up)
@@ -64,8 +64,8 @@ GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)
 
 
 MainMenuScreen::MainMenuScreen(GLFWwindow* window)
+	:AbstractScreen(window)
 {
-	this->window = window;
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 
 	initButtons();
@@ -84,21 +84,21 @@ void MainMenuScreen::update()
 		exit_game_off->Display(glm::vec3(0, -0.4, 0));
 }
 
-void MainMenuScreen::render()
-{
-	do
-	{
-		// Black background
-		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-		// Clear the screen
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		update();
-
-		// Swap buffers
-		glfwSwapBuffers(window);
-		glfwPollEvents();
-	} // Check if the ESC key was pressed or the window was closed
-	while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
-		glfwWindowShouldClose(window) == 0);
-}
+//void MainMenuScreen::render()
+//{
+//	do
+//	{
+//		// Black background
+//		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+//		// Clear the screen
+//		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//
+//		update();
+//
+//		// Swap buffers
+//		glfwSwapBuffers(window);
+//		glfwPollEvents();
+//	} // Check if the ESC key was pressed or the window was closed
+//	while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
+//		glfwWindowShouldClose(window) == 0);
+//}

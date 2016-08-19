@@ -60,6 +60,9 @@
     <ClCompile Include="FileService.cpp">
       <Filter>Source Files\services</Filter>
     </ClCompile>
+    <ClCompile Include="AbstractScreen.cpp">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="gl_includes.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractScreen.h">
+      <Filter>Source Files\screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
