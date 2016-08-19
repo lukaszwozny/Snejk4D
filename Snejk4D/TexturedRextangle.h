@@ -7,6 +7,7 @@ class TexturedRextangle
 public:
 	void Initialize(char* texture_path);
 	void Display(glm::vec3 pos);
+	~TexturedRextangle();
 
 protected:
 	TexturedRextangle();

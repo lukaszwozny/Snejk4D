@@ -7,5 +7,4 @@ class MenuTextButton
 {
 public:
 	MenuTextButton(float width, float height, char* texture_path);
-	~MenuTextButton();
 };

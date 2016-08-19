@@ -77,6 +77,13 @@ void TexturedRextangle::Display(glm::vec3 pos)
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
+TexturedRextangle::~TexturedRextangle()
+{
+	// Cleanup VBO and shader
+	glDeleteProgram(programID);
+	glDeleteTextures(1, &TextureID);
+}
+
 /*
 	Getters and setters
 */
