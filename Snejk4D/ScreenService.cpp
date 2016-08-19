@@ -16,18 +16,16 @@ void ScreenService::SetScreen(GLFWwindow* window)
 {
 	ScreenEnum screen = ScreenEnum::MAiN_MENU;
 	setActualScreenByEnum(window, screen);
-	if (actual_screen != nullptr)
-	{
-
-		delete actual_screen;
-	}
-
-	actual_screen = new MainMenuScreen(window);
 }
 
 ScreenService::ScreenService()
 {
 	std::cout << "Create ScreenServce.";
+}
+
+AbstractScreen* ScreenService::getActualScreen() const
+{
+	return actual_screen;
 }
 
 void ScreenService::setActualScreenByEnum(GLFWwindow* window, ScreenEnum screen)

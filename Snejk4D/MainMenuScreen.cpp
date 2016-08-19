@@ -5,6 +5,7 @@
 #include "MenuTextButton.h"
 #include "FileService.h"
 #include "game.h"
+#include "ScreenService.h"
 
 
 void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
@@ -14,7 +15,7 @@ void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 		switch (getMouseState(window))
 		{
 		case PLAY_GAME:
-			std::cout << "Menu";
+			ScreenService::getInstance()->SetScreen(window);
 			break;
 		case EXIT:
 			break;
@@ -62,6 +63,13 @@ GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)
 	return MENU;
 }
 
+void MainMenuScreen::setBackgroundColor()
+{
+	// Black background
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+	// Clear the screen
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
 
 MainMenuScreen::MainMenuScreen(GLFWwindow* window)
 	:AbstractScreen(window)
@@ -71,8 +79,9 @@ MainMenuScreen::MainMenuScreen(GLFWwindow* window)
 	initButtons();
 }
 
-void MainMenuScreen::update()
+void MainMenuScreen::render()
 {
+	setBackgroundColor();
 	if (getMouseState(window) == PLAY_GAME)
 		new_game_on->Display(glm::vec3(0, 0.4, 0));
 	else

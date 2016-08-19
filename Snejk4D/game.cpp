@@ -5,6 +5,7 @@
 #include "MainMenuScreen.h"
 #include "MenuTextButton.h"
 #include "FileService.h"
+#include "ScreenService.h"
 
 GameStateEnum Game::game_state_enum = MENU;
 
@@ -18,25 +19,14 @@ int Game::Initialize()
 }
 
 
-
 void Game::update()
 {
-	switch (game_state_enum)
-	{
-	case MENU:
-		menu_screen = new MainMenuScreen(window);
-		menu_screen->render();
-		delete menu_screen;
-		break;
-	case OPTIONS: break;
-	case PLAY_GAME: break;
-	case EXIT: break;
-	default: break;
-	}
+	ScreenService::getInstance()->getActualScreen()->render();
 }
 
 void Game::render()
 {
+	ScreenService::getInstance()->SetScreen(window);
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	do
