@@ -8,14 +8,26 @@
 
 void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 {
-	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
-		std::cout << getMouseState(window);
+	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+	{
+		switch (getMouseState(window))
+		{
+		case PLAY_GAME:
+			std::cout << "Menu";
+			break;
+		case EXIT:
+			std::cout << "Exit";
+			break;
+		}
 	}
 }
 
 void MainMenuScreen::initButtons()
 {
 	new_game_on = new MenuTextButton("textures/new_game_on.bmp");
+	new_game_off = new MenuTextButton("textures/new_game_off.bmp");
+	exit_game_on = new MenuTextButton("textures/exit_game_on.bmp");
+	exit_game_off = new MenuTextButton("textures/exit_game_off.bmp");
 }
 
 GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)
@@ -30,7 +42,8 @@ GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)
 	int down = (1.0f - 0.4f) * 768 / 2 - 51.0f / 2.0f;
 
 	if (mouse_x > left && mouse_x < right
-		&& mouse_y > down && mouse_y < up) {
+		&& mouse_y > down && mouse_y < up)
+	{
 		return PLAY_GAME;
 	}
 
@@ -41,7 +54,8 @@ GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)
 	down = (1.0f + 0.4f) * 768 / 2 - 51.0f / 2.0f;
 
 	if (mouse_x > left && mouse_x < right
-		&& mouse_y > down && mouse_y < up) {
+		&& mouse_y > down && mouse_y < up)
+	{
 		return EXIT;
 	}
 
@@ -59,15 +73,23 @@ MainMenuScreen::MainMenuScreen(GLFWwindow* window)
 
 void MainMenuScreen::update()
 {
-	new_game_on->Display(glm::vec3(0, 0.4, 0));
+	if (getMouseState(window) == PLAY_GAME)
+		new_game_on->Display(glm::vec3(0, 0.4, 0));
+	else
+		new_game_off->Display(glm::vec3(0, 0.4, 0));
+
+	if (getMouseState(window) == EXIT)
+		exit_game_on->Display(glm::vec3(0, -0.4, 0));
+	else
+		exit_game_off->Display(glm::vec3(0, -0.4, 0));
 }
 
 void MainMenuScreen::render()
 {
 	do
 	{
-		// Dark blue background
-		glClearColor(0.0f, 0.6f, 0.6f, 0.0f);
+		// Black background
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
