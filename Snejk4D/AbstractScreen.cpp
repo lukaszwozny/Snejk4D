@@ -5,12 +5,6 @@
 AbstractScreen::AbstractScreen(GLFWwindow* window)
 {
 	this->window = window;
-	is_end = false;
-}
-
-void AbstractScreen::end()
-{
-	is_end = true;
 }
 
 void AbstractScreen::setBackgroundColor()
