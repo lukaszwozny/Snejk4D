@@ -63,6 +63,9 @@
     <ClCompile Include="AbstractScreen.cpp">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
+    <ClCompile Include="GameplayScreen.cpp">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="ScreenEnum.h">
       <Filter>Header Files\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayScreen.h">
+      <Filter>Header Files\screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

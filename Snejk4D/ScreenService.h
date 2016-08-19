@@ -7,10 +7,9 @@ class ScreenService
 {
 public:
 	static ScreenService * getInstance();
-	void SetScreen(GLFWwindow* window);
+	void setScreen(GLFWwindow* window, ScreenEnum screen);
 	AbstractScreen* getActualScreen() const;
 private:
-	ScreenService();
 	AbstractScreen * actual_screen;
 	void setActualScreenByEnum(GLFWwindow* window, ScreenEnum screen);
 };

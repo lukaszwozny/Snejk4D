@@ -7,6 +7,13 @@
 #include "game.h"
 #include "ScreenService.h"
 
+MainMenuScreen::MainMenuScreen(GLFWwindow* window)
+	:AbstractScreen(window)
+{
+	glfwSetMouseButtonCallback(window, MouseButtonCallback);
+
+	initButtons();
+}
 
 void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 {
@@ -15,7 +22,7 @@ void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 		switch (getMouseState(window))
 		{
 		case PLAY_GAME:
-			ScreenService::getInstance()->SetScreen(window);
+			ScreenService::getInstance()->setScreen(window,ScreenEnum::GAMEPLAY);
 			break;
 		case EXIT:
 			break;
@@ -69,14 +76,6 @@ void MainMenuScreen::setBackgroundColor()
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	// Clear the screen
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
-MainMenuScreen::MainMenuScreen(GLFWwindow* window)
-	:AbstractScreen(window)
-{
-	glfwSetMouseButtonCallback(window, MouseButtonCallback);
-
-	initButtons();
 }
 
 void MainMenuScreen::render()

@@ -121,6 +121,7 @@
     <ClCompile Include="AbstractScreen.cpp" />
     <ClCompile Include="FileService.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="GameplayScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuScreen.cpp" />
     <ClCompile Include="MenuTextButton.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="CollisionEnum.h" />
     <ClInclude Include="FileService.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="GameplayScreen.h" />
     <ClInclude Include="GameStateEnum.h" />
     <ClInclude Include="gl_includes.h" />
     <ClInclude Include="MainMenuScreen.h" />

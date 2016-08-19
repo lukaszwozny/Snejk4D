@@ -2,6 +2,7 @@
 #include <iostream>
 #include "MainMenuScreen.h"
 #include "ScreenEnum.h"
+#include "GameplayScreen.h"
 
 ScreenService * instance = nullptr;
 
@@ -12,15 +13,11 @@ ScreenService * ScreenService::getInstance()
 	return instance;
 }
 
-void ScreenService::SetScreen(GLFWwindow* window)
+void ScreenService::setScreen(GLFWwindow* window, ScreenEnum screen)
 {
-	ScreenEnum screen = ScreenEnum::MAiN_MENU;
+	if (actual_screen != nullptr)
+		delete actual_screen;
 	setActualScreenByEnum(window, screen);
-}
-
-ScreenService::ScreenService()
-{
-	std::cout << "Create ScreenServce.";
 }
 
 AbstractScreen* ScreenService::getActualScreen() const
@@ -35,7 +32,8 @@ void ScreenService::setActualScreenByEnum(GLFWwindow* window, ScreenEnum screen)
 	case ScreenEnum::MAiN_MENU: 
 		actual_screen = new MainMenuScreen(window);
 		break;
-	case GAMEPLAY: 
+	case GAMEPLAY:
+		actual_screen = new GameplayScreen(window);
 		break;
 	default: break;
 	}

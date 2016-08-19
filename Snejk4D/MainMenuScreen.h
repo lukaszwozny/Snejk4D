@@ -6,7 +6,7 @@
 class MenuTextButton;
 
 class MainMenuScreen
-	: public AbstractScreen
+	:public AbstractScreen
 {
 public:
 	static void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods);

@@ -26,7 +26,7 @@ void Game::update()
 
 void Game::render()
 {
-	ScreenService::getInstance()->SetScreen(window);
+	ScreenService::getInstance()->setScreen(window,ScreenEnum::MAiN_MENU);
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	do
