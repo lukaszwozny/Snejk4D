@@ -22,7 +22,9 @@ void Game::update()
 	switch (game_state_enum)
 	{
 	case MENU:
-		glfwSetMouseButtonCallback(window, MainMenuScreen::MouseButtonCallback);
+		menu_screen = new MainMenuScreen(window);
+		menu_screen->render();
+		delete menu_screen;
 		break;
 	case OPTIONS: break;
 	case PLAY_GAME: break;
@@ -31,7 +33,7 @@ void Game::update()
 	}
 }
 
-void Game::Start()
+void Game::render()
 {
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);

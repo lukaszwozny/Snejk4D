@@ -9,7 +9,7 @@ int main()
 	if (game->Initialize() == -1)
 		return -1;
 
-	game->Start();
+	game->render();
 
 	delete game;
 	return 0;

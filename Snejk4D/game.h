@@ -9,6 +9,7 @@
 //// Include GLM
 #include <glm/glm.hpp>
 #include "GameStateEnum.h"
+#include "MainMenuScreen.h"
 
 class Game
 {
@@ -17,9 +18,10 @@ public:
 
 	int Initialize();
 	void update();
-	void Start();
+	void render();
 
 private:
+	MainMenuScreen* menu_screen;
 	GLFWwindow* window;
 
 	int initGLFWwindow();
