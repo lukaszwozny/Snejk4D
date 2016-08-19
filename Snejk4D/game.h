@@ -1,6 +1,8 @@
 #pragma once
 
 #include "gl_includes.h"
+#include "GameStateEnum.h"
+#include "MainMenuScreen.h"
 
 class Game
 {

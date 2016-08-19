@@ -40,3 +40,31 @@ MenuTextButton::MenuTextButton(char* path)
 	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(tex_coords), tex_coords, GL_STATIC_DRAW);
 }
+
+void MenuTextButton::Display(glm::vec3 pos)
+{
+	// Use our shader
+	glUseProgram(programID);
+
+	glm::mat4 test = glm::translate(glm::mat4(1.0), pos);
+	glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &test[0][0]);
+
+	//// Bind our texture in Texture Unit 0
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, Texture);
+	//// Set our "myTextureSampler" sampler to user Texture Unit 0
+	glUniform1i(TextureID, 0);
+
+	// 1rst attribute buffer : vertices
+	glEnableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+	// 2nd attribute buffer : UVs
+	glEnableVertexAttribArray(1);
+	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+	// Draw the triangle !
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+}
