@@ -4,7 +4,7 @@
 class ControlService
 {
 public:
-	void moveMatrixFromInputs();
+	void ComputeMatrixFromInput();
 
 	glm::mat4 getViewMatrix();
 	glm::mat4 getMoveMatrix();
@@ -12,4 +12,7 @@ public:
 	glm::mat4 MovewMatrix;
 	glm::mat4 ProjectionMatrix;
 	glm::mat4 ViewMatrix;
+
+private:
+	GLFWwindow* window;
 };

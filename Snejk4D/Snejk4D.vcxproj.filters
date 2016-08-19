@@ -69,6 +69,9 @@
     <ClCompile Include="ControlService.cpp">
       <Filter>Source Files\services</Filter>
     </ClCompile>
+    <ClCompile Include="controls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="ControlService.h">
       <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="controls.hpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,15 +1,14 @@
 ﻿#include "ControlService.h"
 
-void ControlService::moveMatrixFromInputs()
+void ControlService::ComputeMatrixFromInput()
 {
 
 }
 
-
-
 /*
 	Getters and setters
 */
+
 
 glm::mat4 ControlService::getViewMatrix()
 {

@@ -119,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractScreen.cpp" />
+    <ClCompile Include="controls.cpp" />
     <ClCompile Include="ControlService.cpp" />
     <ClCompile Include="FileService.cpp" />
     <ClCompile Include="game.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="AbstractScreen.h" />
     <ClInclude Include="CameraStateEnum.h" />
     <ClInclude Include="CollisionEnum.h" />
+    <ClInclude Include="controls.hpp" />
     <ClInclude Include="ControlService.h" />
     <ClInclude Include="FileService.h" />
     <ClInclude Include="game.h" />
