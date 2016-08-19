@@ -93,7 +93,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AbstractScreen.h">
-      <Filter>Source Files\screens</Filter>
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenEnum.h">
+      <Filter>Header Files\enums</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

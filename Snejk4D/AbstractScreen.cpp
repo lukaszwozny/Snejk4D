@@ -5,6 +5,7 @@
 AbstractScreen::AbstractScreen(GLFWwindow* window)
 {
 	this->window = window;
+	is_end = false;
 }
 
 void AbstractScreen::render()
@@ -23,5 +24,11 @@ void AbstractScreen::render()
 		glfwPollEvents();
 	} // Check if the ESC key was pressed or the window was closed
 	while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
-		glfwWindowShouldClose(window) == 0);
+		glfwWindowShouldClose(window) == 0 &&
+		is_end == false);
+}
+
+void AbstractScreen::end()
+{
+	is_end = true;
 }

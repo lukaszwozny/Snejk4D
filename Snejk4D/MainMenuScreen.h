@@ -14,7 +14,6 @@ public:
 	void initButtons();
 	MainMenuScreen(GLFWwindow* window);
 	void update() override;
-//	void render();
 private:
 	MenuTextButton * new_game_on, *new_game_off;
 	MenuTextButton * exit_game_on, *exit_game_off;

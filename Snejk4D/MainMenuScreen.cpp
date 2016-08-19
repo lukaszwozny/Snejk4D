@@ -4,6 +4,7 @@
 #include "MainMenuScreen.h"
 #include "MenuTextButton.h"
 #include "FileService.h"
+#include "game.h"
 
 
 void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
@@ -16,7 +17,6 @@ void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 			std::cout << "Menu";
 			break;
 		case EXIT:
-			std::cout << "Exit";
 			break;
 		}
 	}
@@ -84,21 +84,3 @@ void MainMenuScreen::update()
 		exit_game_off->Display(glm::vec3(0, -0.4, 0));
 }
 
-//void MainMenuScreen::render()
-//{
-//	do
-//	{
-//		// Black background
-//		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-//		// Clear the screen
-//		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//
-//		update();
-//
-//		// Swap buffers
-//		glfwSwapBuffers(window);
-//		glfwPollEvents();
-//	} // Check if the ESC key was pressed or the window was closed
-//	while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
-//		glfwWindowShouldClose(window) == 0);
-//}
