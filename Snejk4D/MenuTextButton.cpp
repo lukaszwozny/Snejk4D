@@ -1,14 +1,11 @@
 ﻿#include "MenuTextButton.h"
 #include "FileService.h"
-#include <ostream>
-#include <iostream>
 
 MenuTextButton::MenuTextButton(char* path)
 {
 	// Create and compile our GLSL program from the shaders
 	programID = FileService::LoadShaders("shaders/MenuTextVertexShader.vertexshader", "shaders/MenuTextFragmentShader.fragmentshader");
 
-	std::cout << path << std::endl;
 	Texture = FileService::LoadBMP(path);
 	// Get a handle for our "myTextureSampler" uniform
 	TextureID = glGetUniformLocation(programID, "myTextureSampler");
@@ -62,7 +59,6 @@ void MenuTextButton::Display(glm::vec3 pos)
 	glm::mat4 test = glm::translate(glm::mat4(1.0), pos);
 	glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &test[0][0]);
 
-
 	//// Bind our texture in Texture Unit 0
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, Texture);
@@ -81,5 +77,4 @@ void MenuTextButton::Display(glm::vec3 pos)
 
 	// Draw the triangle !
 	glDrawArrays(GL_TRIANGLES, 0, 6);
-
 }
