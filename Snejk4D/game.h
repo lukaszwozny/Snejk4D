@@ -7,6 +7,10 @@
 class Game
 {
 public:
+	// Window size
+	static const int WIDTH = 1024;
+	static const int HEIGHT = 768;
+
 	static GameStateEnum game_state_enum;
 
 	int Initialize();

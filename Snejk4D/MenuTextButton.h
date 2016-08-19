@@ -1,26 +1,11 @@
 ﻿#pragma once
-#include <vector>
 
-#include "gl_includes.h"
+#include "TexturedRextangle.h"
 
 class MenuTextButton
+	:public TexturedRextangle
 {
 public:
-	MenuTextButton(char* path);
+	MenuTextButton(float width, float height, char* texture_path);
 	~MenuTextButton();
-	void Display(glm::vec3 pos);
-private:
-	GLuint programID;
-	GLuint Texture;
-	GLuint TextureID;
-	GLuint MatrixID;
-
-	std::vector<glm::vec3> vertices;
-	std::vector<glm::vec2> uvs;
-	std::vector<glm::vec3> normals; // Won't be used at the moment.
-
-	GLuint vertexbuffer;
-	GLuint uvbuffer;
-	glm::mat4 ModelMatrix;
-	glm::mat4 MVP;
 };

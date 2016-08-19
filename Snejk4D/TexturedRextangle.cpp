@@ -1,28 +1,34 @@
-﻿#include "ScenePart.h"
+﻿#include "TexturedRextangle.h"
 #include "FileService.h"
+#include "game.h"
 
-ScenePart::ScenePart()
+TexturedRextangle::TexturedRextangle()
+{
+	width = 100.0f;
+	height = 100.0f;
+}
+
+void TexturedRextangle::Initialize(char* texture_path)
 {
 	// Create and compile our GLSL program from the shaders
 	programID = FileService::LoadShaders("shaders/TexturedRectangle.vertexshader", "shaders/TexturedRectangle.fragmentshader");
 
-	Texture = FileService::LoadBMP("textures/scene_minecraft_dirt.bmp");
+	Texture = FileService::LoadBMP(texture_path);
 	// Get a handle for our "myTextureSampler" uniform
 	TextureID = glGetUniformLocation(programID, "myTextureSampler");
 
 	// Get a handle for our "MVP" uniform
 	MatrixID = glGetUniformLocation(programID, "MVP");
 
-	const float scene_height = -1.0f;
-	const float double_width = 2.0f;
-	const GLfloat scene_points[] = {
-		double_width, scene_height, -double_width,
-		-double_width, scene_height, -double_width,
-		-double_width, scene_height, double_width,
+	// An array of 3 vectors which represents 3 vertices
+	static const GLfloat scene_points[] = {
+		-1.0f, -1.0f, 0.0f,
+		1.0f, -1.0f, 0.0f,
+		1.0f, 1.0f, 0.0f,
 
-		-double_width, scene_height, double_width,
-		double_width, scene_height, double_width,
-		double_width, scene_height, -double_width,
+		1.0f, 1.0f, 0.0f,
+		-1.0f, 1.0f, 0.0f,
+		-1.0f, -1.0f, 0.0f,
 	};
 
 	GLfloat tex_coords[] = {
@@ -33,28 +39,23 @@ ScenePart::ScenePart()
 		0.0f, 1.0f, // E
 		0.0f, 0.0f, // F
 	};
+
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(scene_points), &scene_points[0], GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(scene_points), scene_points, GL_STATIC_DRAW);
 
 	glGenBuffers(1, &uvbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(tex_coords), tex_coords, GL_STATIC_DRAW);
 }
 
-ScenePart::~ScenePart()
-{
-	// Cleanup VBO and shader
-	glDeleteProgram(programID);
-	glDeleteTextures(1, &TextureID);
-}
-
-void ScenePart::Display(glm::mat4 MVP)
+void TexturedRextangle::Display(glm::vec3 pos)
 {
 	// Use our shader
 	glUseProgram(programID);
-
-	glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
+	glm::mat4 test = glm::translate(glm::mat4(1.0), pos);
+	test = glm::scale(test, glm::vec3(width / Game::WIDTH, height / Game::HEIGHT, 1.0f));
+	glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &test[0][0]);
 
 	//// Bind our texture in Texture Unit 0
 	glActiveTexture(GL_TEXTURE0);
@@ -75,3 +76,28 @@ void ScenePart::Display(glm::mat4 MVP)
 	// Draw the triangle !
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
+
+/*
+	Getters and setters
+*/
+
+float TexturedRextangle::getWidth() const
+{
+	return width;
+}
+
+void TexturedRextangle::setWidth(float width)
+{
+	this->width = width;
+}
+
+float TexturedRextangle::getHeight() const
+{
+	return height;
+}
+
+void TexturedRextangle::setHeight(float height)
+{
+	this->height = height;
+}
+

@@ -33,10 +33,15 @@ void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 
 void MainMenuScreen::initButtons()
 {
-	new_game_on = new MenuTextButton("textures/new_game_on.bmp");
-	new_game_off = new MenuTextButton("textures/new_game_off.bmp");
-	exit_game_on = new MenuTextButton("textures/exit_game_on.bmp");
-	exit_game_off = new MenuTextButton("textures/exit_game_off.bmp");
+	const float NEW_GAME_WIDTH = 330.0f;
+	const float NEW_GAME_HEIGHT = 51.0f;
+	const float EXIT_WIDTH = 122.0f;
+	const float EXIT_HEIGHT = 51.0f;
+
+	new_game_on = new MenuTextButton(NEW_GAME_WIDTH, NEW_GAME_HEIGHT, "textures/new_game_on.bmp");
+	new_game_off = new MenuTextButton(NEW_GAME_WIDTH, NEW_GAME_HEIGHT, "textures/new_game_off.bmp");
+	exit_game_on = new MenuTextButton(EXIT_WIDTH, NEW_GAME_HEIGHT, "textures/exit_game_on.bmp");
+	exit_game_off = new MenuTextButton(EXIT_WIDTH, NEW_GAME_HEIGHT, "textures/exit_game_off.bmp");
 }
 
 GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)

@@ -131,6 +131,7 @@
     <ClCompile Include="ScenePart.cpp" />
     <ClCompile Include="ScreenService.cpp" />
     <ClCompile Include="SnakePart.cpp" />
+    <ClCompile Include="TexturedRextangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScreen.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="ScreenEnum.h" />
     <ClInclude Include="ScreenService.h" />
     <ClInclude Include="SnakePart.h" />
+    <ClInclude Include="TexturedRextangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

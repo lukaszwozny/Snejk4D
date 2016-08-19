@@ -81,6 +81,9 @@
     <ClCompile Include="SnakePart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TexturedRextangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturedRextangle.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
