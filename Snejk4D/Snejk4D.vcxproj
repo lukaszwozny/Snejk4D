@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileService.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuScreen.cpp" />
@@ -127,6 +128,7 @@
   <ItemGroup>
     <ClInclude Include="CameraStateEnum.h" />
     <ClInclude Include="CollisionEnum.h" />
+    <ClInclude Include="FileService.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="GameStateEnum.h" />
     <ClInclude Include="MainMenuScreen.h" />

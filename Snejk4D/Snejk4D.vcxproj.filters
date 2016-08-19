@@ -57,6 +57,9 @@
     <ClCompile Include="MenuTextButton.cpp">
       <Filter>Source Files\ui</Filter>
     </ClCompile>
+    <ClCompile Include="FileService.cpp">
+      <Filter>Source Files\services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="MenuTextButton.h">
       <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="FileService.h">
+      <Filter>Header Files\services</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

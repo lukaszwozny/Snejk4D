@@ -1,11 +1,12 @@
 ﻿#include "MenuTextButton.h"
+#include "FileService.h"
 
 MenuTextButton::MenuTextButton(char* path)
 {
 //	// Create and compile our GLSL program from the shaders
 //	programID = LoadShaders("shaders/MenuTextVertexShader.vertexshader", "shaders/MenuTextFragmentShader.fragmentshader");
 //
-//	Texture = loadBMP_custom(path);
+	Texture = FileService::LoadBMP(path);
 //	// Get a handle for our "myTextureSampler" uniform
 //	TextureID = glGetUniformLocation(programID, "myTextureSampler");
 //
