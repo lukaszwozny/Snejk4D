@@ -3,6 +3,7 @@
 
 #include "MainMenuScreen.h"
 #include "MenuTextButton.h"
+#include "FileService.h"
 
 
 void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
@@ -58,12 +59,11 @@ MainMenuScreen::MainMenuScreen(GLFWwindow* window)
 
 void MainMenuScreen::update()
 {
-
+	new_game_on->Display(glm::vec3(0, 0.4, 0));
 }
 
 void MainMenuScreen::render()
 {
-	MenuTextButton test = MenuTextButton("");
 	do
 	{
 		// Dark blue background
@@ -71,8 +71,7 @@ void MainMenuScreen::render()
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-//		update();
-		test.Display(glm::vec3(0, 0.4, 0));
+		update();
 
 		// Swap buffers
 		glfwSwapBuffers(window);

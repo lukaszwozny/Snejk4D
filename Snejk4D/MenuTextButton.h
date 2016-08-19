@@ -7,6 +7,7 @@ class MenuTextButton
 {
 public:
 	MenuTextButton(char* path);
+	~MenuTextButton();
 	void Display(glm::vec3 pos);
 private:
 	GLuint programID;

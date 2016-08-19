@@ -37,7 +37,6 @@ void Game::update()
 
 void Game::render()
 {
-	MenuTextButton test = MenuTextButton("");
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	do

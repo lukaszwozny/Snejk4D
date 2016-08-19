@@ -1,8 +1,19 @@
 ﻿#include "MenuTextButton.h"
 #include "FileService.h"
+#include <ostream>
+#include <iostream>
 
 MenuTextButton::MenuTextButton(char* path)
 {
+	// Create and compile our GLSL program from the shaders
+	programID = FileService::LoadShaders("shaders/MenuTextVertexShader.vertexshader", "shaders/MenuTextFragmentShader.fragmentshader");
+
+	std::cout << path << std::endl;
+	Texture = FileService::LoadBMP(path);
+	// Get a handle for our "myTextureSampler" uniform
+//	TextureID = glGetUniformLocation(programID, "myTextureSampler");
+
+
 	GLuint VertexArrayID;
 	glGenVertexArrays(1, &VertexArrayID);
 	glBindVertexArray(VertexArrayID);
@@ -36,6 +47,13 @@ MenuTextButton::MenuTextButton(char* path)
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
 	// Give our vertices to OpenGL.
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+}
+
+MenuTextButton::~MenuTextButton()
+{
+	// Cleanup VBO and shader
+	glDeleteProgram(programID);
+	glDeleteTextures(1, &TextureID);
 }
 
 void MenuTextButton::Display(glm::vec3 pos)
