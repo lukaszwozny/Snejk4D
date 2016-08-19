@@ -34,6 +34,12 @@
     <Filter Include="Header Files\screens">
       <UniqueIdentifier>{62902431-c658-40ae-9445-c3b208dcd168}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{98138c99-b20f-4595-bebe-492eb9a0f159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui">
+      <UniqueIdentifier>{a89f3fbc-8032-4222-913c-0f8a45c08892}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -47,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="MainMenuScreen.cpp">
       <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTextButton.cpp">
+      <Filter>Source Files\ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="MainMenuScreen.h">
       <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTextButton.h">
+      <Filter>Header Files\ui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
