@@ -127,6 +127,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuScreen.cpp" />
     <ClCompile Include="MenuTextButton.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="ScenePart.cpp" />
     <ClCompile Include="ScreenService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +144,8 @@
     <ClInclude Include="gl_includes.h" />
     <ClInclude Include="MainMenuScreen.h" />
     <ClInclude Include="MenuTextButton.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="ScenePart.h" />
     <ClInclude Include="ScreenEnum.h" />
     <ClInclude Include="ScreenService.h" />
   </ItemGroup>

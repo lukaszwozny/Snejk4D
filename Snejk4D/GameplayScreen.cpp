@@ -1,6 +1,7 @@
 ﻿#include "GameplayScreen.h"
 #include <iostream>
 #include <string>
+#include "controls.hpp"
 
 void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 {
@@ -21,6 +22,15 @@ void GameplayScreen::update()
 	FPSCounter();
 	std::string title = "The Snejk 4D @ FPS: " + std::to_string(fps);
 	glfwSetWindowTitle(window, title.c_str());
+
+	computeMatricesFromInputs(window);
+	moveMatrixFromInputs();
+	glm::mat4 ProjectionMatrix = getProjectionMatrix();
+	glm::mat4 ViewMatrix = getViewMatrix();
+	glm::mat4 ModelMatrix = glm::mat4(1.0);
+	glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
+
+	scene.Display(MVP);
 }
 
 void GameplayScreen::render()

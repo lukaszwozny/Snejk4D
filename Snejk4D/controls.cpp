@@ -217,8 +217,8 @@ void setCameraState(CameraStateEnum c_state)
 	camera_state = c_state;
 }
 
-void computeMatricesFromInputs() {
-
+void computeMatricesFromInputs(GLFWwindow * wind) {
+	window = wind;
 	// glfwGetTime is called only once, the first time this function is called
 	static double lastTime = glfwGetTime();
 	static float x = 0.0;

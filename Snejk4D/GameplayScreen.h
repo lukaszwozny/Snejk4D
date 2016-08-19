@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "AbstractScreen.h"
+#include "Scene.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -13,6 +14,7 @@ public:
 	void setBackgroundColor() override;
 
 private:
+	Scene scene;
 	double fps;
 	void FPSCounter();
 };
