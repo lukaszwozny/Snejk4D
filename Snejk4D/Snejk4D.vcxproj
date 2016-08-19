@@ -130,6 +130,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ScenePart.cpp" />
     <ClCompile Include="ScreenService.cpp" />
+    <ClCompile Include="SnakePart.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScreen.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="ScenePart.h" />
     <ClInclude Include="ScreenEnum.h" />
     <ClInclude Include="ScreenService.h" />
+    <ClInclude Include="SnakePart.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

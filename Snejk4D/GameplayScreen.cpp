@@ -32,7 +32,7 @@ void GameplayScreen::update()
 	glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
 	scene.Display(MVP);
-
+	part.Display(MVP);
 }
 
 void GameplayScreen::render()

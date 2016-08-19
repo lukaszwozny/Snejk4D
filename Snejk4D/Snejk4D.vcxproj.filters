@@ -78,6 +78,9 @@
     <ClCompile Include="ScenePart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SnakePart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -122,11 +125,14 @@
     <ClInclude Include="controls.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="ScenePart.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakePart.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

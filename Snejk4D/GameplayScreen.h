@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "AbstractScreen.h"
 #include "Scene.h"
+#include "SnakePart.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -15,6 +16,7 @@ public:
 
 private:
 	Scene scene;
+	SnakePart part;
 	double fps;
 	void FPSCounter();
 };
