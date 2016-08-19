@@ -14,6 +14,8 @@ void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 GameplayScreen::GameplayScreen(GLFWwindow* window)
 	: AbstractScreen(window)
 {
+//	glfwSetMouseButtonCallback(window, MouseButtonCallback);
+
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 }
 
@@ -24,13 +26,13 @@ void GameplayScreen::update()
 	glfwSetWindowTitle(window, title.c_str());
 
 	computeMatricesFromInputs(window);
-	moveMatrixFromInputs();
 	glm::mat4 ProjectionMatrix = getProjectionMatrix();
 	glm::mat4 ViewMatrix = getViewMatrix();
 	glm::mat4 ModelMatrix = glm::mat4(1.0);
 	glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
 	scene.Display(MVP);
+
 }
 
 void GameplayScreen::render()
