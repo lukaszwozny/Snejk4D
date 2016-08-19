@@ -5,7 +5,8 @@ class GameplayScreen
 	:public AbstractScreen
 {
 public:
-	GameplayScreen::GameplayScreen(GLFWwindow* window);
+	static void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
+	GameplayScreen(GLFWwindow* window);
 
 	void render() override;
 	void setBackgroundColor() override;

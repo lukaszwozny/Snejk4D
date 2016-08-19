@@ -22,6 +22,7 @@ void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 		switch (getMouseState(window))
 		{
 		case PLAY_GAME:
+			std::cout << "Gameplay";
 			ScreenService::getInstance()->setScreen(window,ScreenEnum::GAMEPLAY);
 			break;
 		case EXIT:
