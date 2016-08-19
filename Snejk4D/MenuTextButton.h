@@ -1,11 +1,7 @@
 ﻿#pragma once
 #include <vector>
 
-// Include GLEW
-#include <GL/glew.h>
-
-// Include GLM
-#include <glm/gtc/matrix_transform.hpp>
+#include "gl_includes.h"
 
 class MenuTextButton
 {

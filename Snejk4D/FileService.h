@@ -1,6 +1,5 @@
 ﻿#pragma once
-// Include GLEW
-#include <GL/glew.h>
+#include "gl_includes.h"
 
 class FileService
 {

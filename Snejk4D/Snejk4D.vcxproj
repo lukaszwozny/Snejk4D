@@ -131,6 +131,7 @@
     <ClInclude Include="FileService.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="GameStateEnum.h" />
+    <ClInclude Include="gl_includes.h" />
     <ClInclude Include="MainMenuScreen.h" />
     <ClInclude Include="MenuTextButton.h" />
     <ClInclude Include="ScreenService.h" />

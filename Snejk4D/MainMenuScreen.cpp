@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "MainMenuScreen.h"
+#include "MenuTextButton.h"
 
 
 void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
@@ -13,7 +14,7 @@ void MainMenuScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 
 void MainMenuScreen::initButtons()
 {
-//	new_game_on = new MenuTextButton("textures/new_game_on.bmp");
+	new_game_on = new MenuTextButton("textures/new_game_on.bmp");
 }
 
 GameStateEnum MainMenuScreen::getMouseState(GLFWwindow* window)

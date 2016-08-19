@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <glfw3.h>
+#include "gl_includes.h"
 #include "GameStateEnum.h"
 
 class MenuTextButton;
