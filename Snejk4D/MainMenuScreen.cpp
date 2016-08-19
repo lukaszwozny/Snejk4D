@@ -63,6 +63,7 @@ void MainMenuScreen::update()
 
 void MainMenuScreen::render()
 {
+	MenuTextButton test = MenuTextButton("");
 	do
 	{
 		// Dark blue background
@@ -70,7 +71,8 @@ void MainMenuScreen::render()
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		update();
+//		update();
+		test.Display(glm::vec3(0, 0.4, 0));
 
 		// Swap buffers
 		glfwSwapBuffers(window);

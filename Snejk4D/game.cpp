@@ -3,6 +3,8 @@
 #include <ostream>
 #include <iostream>
 #include "MainMenuScreen.h"
+#include "MenuTextButton.h"
+#include "FileService.h"
 
 GameStateEnum Game::game_state_enum = MENU;
 
@@ -35,12 +37,13 @@ void Game::update()
 
 void Game::render()
 {
+	MenuTextButton test = MenuTextButton("");
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	do
 	{
 		// Dark blue background
-		glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
+		glClearColor(0.9f, 0.5f, 1.0f, 0.0f);
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
