@@ -86,59 +86,59 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStateEnum.h">
-      <Filter>Header Files\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraStateEnum.h">
-      <Filter>Header Files\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionEnum.h">
-      <Filter>Header Files\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="ScreenService.h">
-      <Filter>Header Files\services</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenuScreen.h">
-      <Filter>Header Files\screens</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuTextButton.h">
-      <Filter>Header Files\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="FileService.h">
-      <Filter>Header Files\services</Filter>
-    </ClInclude>
-    <ClInclude Include="gl_includes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AbstractScreen.h">
-      <Filter>Header Files\screens</Filter>
-    </ClInclude>
-    <ClInclude Include="ScreenEnum.h">
-      <Filter>Header Files\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="GameplayScreen.h">
-      <Filter>Header Files\screens</Filter>
-    </ClInclude>
-    <ClInclude Include="ControlService.h">
-      <Filter>Header Files\services</Filter>
-    </ClInclude>
     <ClInclude Include="controls.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="ScenePart.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="src\CameraStateEnum.h">
+      <Filter>Header Files\enums</Filter>
     </ClInclude>
-    <ClInclude Include="SnakePart.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="src\AbstractScreen.h">
+      <Filter>Header Files\screens</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
+    <ClInclude Include="src\CollisionEnum.h">
+      <Filter>Header Files\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlService.h">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FileService.h">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TexturedRextangle.h">
+    <ClInclude Include="src\gl_includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MenuTextButton.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScenePart.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScreenEnum.h">
+      <Filter>Header Files\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScreenService.h">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SnakePart.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TexturedRextangle.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MainMenuScreen.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStateEnum.h">
+      <Filter>Header Files\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameplayScreen.h">
+      <Filter>Header Files\screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

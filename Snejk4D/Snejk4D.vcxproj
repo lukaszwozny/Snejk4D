@@ -68,7 +68,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>src;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -134,24 +136,24 @@
     <ClCompile Include="TexturedRextangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractScreen.h" />
-    <ClInclude Include="CameraStateEnum.h" />
-    <ClInclude Include="CollisionEnum.h" />
+    <ClInclude Include="src\AbstractScreen.h" />
+    <ClInclude Include="src\CameraStateEnum.h" />
+    <ClInclude Include="src\CollisionEnum.h" />
     <ClInclude Include="controls.hpp" />
-    <ClInclude Include="ControlService.h" />
-    <ClInclude Include="FileService.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="GameplayScreen.h" />
-    <ClInclude Include="GameStateEnum.h" />
-    <ClInclude Include="gl_includes.h" />
-    <ClInclude Include="MainMenuScreen.h" />
-    <ClInclude Include="MenuTextButton.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="ScenePart.h" />
-    <ClInclude Include="ScreenEnum.h" />
-    <ClInclude Include="ScreenService.h" />
-    <ClInclude Include="SnakePart.h" />
-    <ClInclude Include="TexturedRextangle.h" />
+    <ClInclude Include="src\ControlService.h" />
+    <ClInclude Include="src\FileService.h" />
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\GameplayScreen.h" />
+    <ClInclude Include="src\GameStateEnum.h" />
+    <ClInclude Include="src\gl_includes.h" />
+    <ClInclude Include="src\MainMenuScreen.h" />
+    <ClInclude Include="src\MenuTextButton.h" />
+    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\ScenePart.h" />
+    <ClInclude Include="src\ScreenEnum.h" />
+    <ClInclude Include="src\ScreenService.h" />
+    <ClInclude Include="src\SnakePart.h" />
+    <ClInclude Include="src\TexturedRextangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
