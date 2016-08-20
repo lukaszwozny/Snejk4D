@@ -120,26 +120,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractScreen.cpp" />
-    <ClCompile Include="controls.cpp" />
-    <ClCompile Include="ControlService.cpp" />
-    <ClCompile Include="FileService.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="GameplayScreen.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainMenuScreen.cpp" />
-    <ClCompile Include="MenuTextButton.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="ScenePart.cpp" />
-    <ClCompile Include="ScreenService.cpp" />
-    <ClCompile Include="SnakePart.cpp" />
-    <ClCompile Include="TexturedRextangle.cpp" />
+    <ClCompile Include="src\AbstractScreen.cpp" />
+    <ClCompile Include="src\controls.cpp" />
+    <ClCompile Include="src\ControlService.cpp" />
+    <ClCompile Include="src\FileService.cpp" />
+    <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\GameplayScreen.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MainMenuScreen.cpp" />
+    <ClCompile Include="src\MenuTextButton.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\ScenePart.cpp" />
+    <ClCompile Include="src\ScreenService.cpp" />
+    <ClCompile Include="src\SnakePart.cpp" />
+    <ClCompile Include="src\TexturedRextangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AbstractScreen.h" />
     <ClInclude Include="src\CameraStateEnum.h" />
     <ClInclude Include="src\CollisionEnum.h" />
-    <ClInclude Include="controls.hpp" />
+    <ClInclude Include="src\controls.hpp" />
     <ClInclude Include="src\ControlService.h" />
     <ClInclude Include="src\FileService.h" />
     <ClInclude Include="src\game.h" />
