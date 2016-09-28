@@ -6,6 +6,8 @@ Snake::Snake()
 {
 	size = 0;
 	buffer_size = 200.0f / getSnakeSpeed();
+	for (int i = 0; i < MIN_SIZE; ++i)
+		AddPart();
 }
 
 
@@ -23,6 +25,8 @@ bool Snake::AddPart()
 
 bool Snake::RemovePart()
 {
+	if (size <= MIN_SIZE)
+		return false;
 	--size;
 	delete position_buffers_.back();
 	position_buffers_.pop_back();

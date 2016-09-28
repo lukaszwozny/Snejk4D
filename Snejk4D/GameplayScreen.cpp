@@ -11,24 +11,28 @@ void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 	}
 }
 
+int part_add_n = 0;
+void GameplayScreen::KeyboardButtonCallback(GLFWwindow* window, int button, int scancode, int action, int mods)
+{
+	if (button == GLFW_KEY_KP_ADD && action == GLFW_PRESS)
+	{
+		part_add_n = 1;
+	}
+	if (button == GLFW_KEY_KP_SUBTRACT && action == GLFW_PRESS)
+	{
+		part_add_n = -1;
+	}
+}
+
 GameplayScreen::GameplayScreen(GLFWwindow* window)
 	: AbstractScreen(window)
 {
 //	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
+	glfwSetKeyCallback(window, KeyboardButtonCallback);
 
 	snake = new Snake();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
-	snake->AddPart();
 }
 
 void GameplayScreen::update()
@@ -49,6 +53,18 @@ void GameplayScreen::update()
 	scene.Display(MVP);
 //	part.Display(MVP);
 	snake->Display(MVP, getSnakePosition(), getRotateAngle());
+
+	switch (part_add_n)
+	{
+	case -1:
+		snake->RemovePart();
+		part_add_n = 0;
+		break;
+	case 1:
+		snake->AddPart();
+		part_add_n = 0;
+		break;
+	}
 }
 
 void GameplayScreen::render()

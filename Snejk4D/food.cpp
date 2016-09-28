@@ -29,4 +29,38 @@ Food::Food(char * obj_path, char * tex_path)
 
 Food::~Food()
 {
+	// Cleanup VBO and shader
+	glDeleteProgram(programID);
+	glDeleteTextures(1, &TextureID);
+}
+
+void Food::Display(glm::mat4 MVP)
+{
+	glUseProgram(programID);
+
+	glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
+
+	//// Bind our texture in Texture Unit 0
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, Texture);
+	//// Set our "myTextureSampler" sampler to user Texture Unit 0
+	glUniform1i(TextureID, 0);
+
+	// 1rst attribute buffer : vertices
+	glEnableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+	// 2nd attribute buffer : UVs
+	glEnableVertexAttribArray(1);
+	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+	// Draw the triangle !
+	glDrawArrays(GL_TRIANGLES, 0, vertices.size());
+}
+
+glm::mat4 Food::getMVP()
+{
+	return MVP;
 }
