@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Projekty\KursSUPER\ogl-OpenGL-tutorial_0015_33\external\glfw-3.1.2\tests\monitors.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projekty\KursSUPER\ogl-OpenGL-tutorial_0015_33\external\glfw-3.1.2\deps\getopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Projekty\KursSUPER\ogl-OpenGL-tutorial_0015_33\external\glfw-3.1.2\deps\getopt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Projekty\KursSUPER\ogl-OpenGL-tutorial_0015_33\external\glfw-3.1.2\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2DD913F2-22E7-3013-BEA9-9970274B0EBB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{49B67450-408D-3F95-BB64-06C1678B06E1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

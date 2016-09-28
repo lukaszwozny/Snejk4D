@@ -1,0 +1,6 @@
+﻿  Building Custom Rule D:/Projekty/KursSUPER/ogl-OpenGL-tutorial_0015_33/external/glfw-3.1.2/tests/CMakeLists.txt
+  CMake does not need to re-run because D:\Projekty\KursSUPER\tutorials-bin-vc10\external\glfw-3.1.2\tests\CMakeFiles\generate.stamp is up-to-date.
+  monitors.c
+  getopt.c
+  monitors.vcxproj -> D:\Projekty\KursSUPER\tutorials-bin-vc10\external\glfw-3.1.2\tests\Debug\monitors.exe
+  monitors.vcxproj -> D:/Projekty/KursSUPER/tutorials-bin-vc10/external/glfw-3.1.2/tests/Debug/monitors.pdb (Full PDB)
