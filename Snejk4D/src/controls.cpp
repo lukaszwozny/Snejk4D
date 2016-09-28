@@ -2,6 +2,7 @@
 
 glm::mat4 ViewMatrix;
 glm::mat4 ProjectionMatrix;
+glm::mat4 MovewMatrix;
 
 glm::mat4 getViewMatrix(){
 	return ViewMatrix;
@@ -9,10 +10,14 @@ glm::mat4 getViewMatrix(){
 glm::mat4 getProjectionMatrix(){
 	return ProjectionMatrix;
 }
-
+glm::mat4 getMoveMatrix() {
+	return MovewMatrix;
+}
 
 // Initial position : on +Z
 glm::vec3 position = glm::vec3( 0, 0, 5 ); 
+// initial snake positon
+glm::vec3 snake_position = glm::vec3(0, 0, 0);
 // Initial horizontal angle : toward -Z
 float horizontalAngle = 3.14f;
 // Initial vertical angle : none
@@ -21,8 +26,73 @@ float verticalAngle = 0.0f;
 float initialFoV = 45.0f;
 
 float speed = 3.0f; // 3 units / second
+float move_snake_speed = 10.0f; // 3 units / second
+float rotate_snake_angle = 0.0;
+float rotate_snake_speed = move_snake_speed*0.002f;
 float mouseSpeed = 0.005f;
+int dizzy = 1;
 
+
+glm::vec3 getSnakePosition()
+{
+	return snake_position;
+}
+
+float getSnakeSpeed()
+{
+	return move_snake_speed;
+}
+
+float getRotateAngle()
+{
+	return rotate_snake_angle;
+}
+
+void moveMatrixFromInputs(GLFWwindow* window)
+{
+	static double movelastTime = glfwGetTime();
+	static double rotatelastTime = glfwGetTime();
+
+	double currentTime = glfwGetTime();
+	float movedeltaTime = float(currentTime - movelastTime);
+	float rotatedeltaTime = float(currentTime - rotatelastTime);
+
+	glm::vec3 move_direction(
+		sin(rotate_snake_angle),
+		0,
+		cos(rotate_snake_angle)
+	);
+
+	//always go on
+	if (movedeltaTime > 0.01f) {
+		snake_position += 0.02f*move_direction*move_snake_speed;
+		movelastTime = currentTime;
+	}
+	// Move backward
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+		/*if (movedeltaTime > 0.02) {
+		snake_position -= move_direction*0.05f;
+		movedeltaTime = currentTime;
+		}*/
+	}
+	// Strafe right
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+		if (rotatelastTime > 1.0f / 60.0f) {
+			rotate_snake_angle -= dizzy*rotate_snake_speed;
+			rotatelastTime = currentTime;
+		}
+	}
+	// Strafe left
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+		if (rotatelastTime > 1.0f / 60.0f) {
+			rotate_snake_angle += dizzy*rotate_snake_speed;
+			rotatelastTime = currentTime;
+		}
+	}
+
+	MovewMatrix = glm::translate(glm::mat4(1.0), snake_position);
+	MovewMatrix = glm::rotate(MovewMatrix, rotate_snake_angle, glm::vec3(0, 1, 0));
+}
 
 
 void computeMatricesFromInputs(GLFWwindow* window){

@@ -1,11 +1,11 @@
 #include "snake.h"
-
+#include "controls.hpp"
 
 
 Snake::Snake()
 {
 	size = 0;
-	buffer_size = 200.0f; /* getSnakeSpeed() ?? TODO */ 
+	buffer_size = 200.0f / getSnakeSpeed();
 }
 
 

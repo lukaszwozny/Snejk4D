@@ -38,6 +38,7 @@ void GameplayScreen::update()
 	glfwSetWindowTitle(window, title.c_str());
 
 	computeMatricesFromInputs(window);
+	moveMatrixFromInputs(window);
 	glm::mat4 ProjectionMatrix = getProjectionMatrix();
 	glm::mat4 ViewMatrix = getViewMatrix();
 	glm::mat4 ModelMatrix = glm::mat4(1.0);
@@ -47,7 +48,7 @@ void GameplayScreen::update()
 
 	scene.Display(MVP);
 //	part.Display(MVP);
-	snake->Display(MVP, test, 5.0);
+	snake->Display(MVP, getSnakePosition(), getRotateAngle());
 }
 
 void GameplayScreen::render()
@@ -63,6 +64,15 @@ void GameplayScreen::setBackgroundColor()
 	glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
 	// Clear the screen
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	// Enable depth test
+	glEnable(GL_DEPTH_TEST);
+
+	// Accept fragment if it closer to the camera than the former one
+	glDepthFunc(GL_LESS);
+
+	// Cull triangles which normal is not towards the camera
+	glEnable(GL_CULL_FACE);
 }
 
 void GameplayScreen::FPSCounter()
