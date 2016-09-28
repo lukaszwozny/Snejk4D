@@ -2,6 +2,7 @@
 #include "AbstractScreen.h"
 #include "Scene.h"
 #include "snake_part.h"
+#include "../snake.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -16,6 +17,7 @@ public:
 
 private:
 	Scene scene;
+	Snake * snake;
 	SnakePart part;
 	double fps;
 	void FPSCounter();

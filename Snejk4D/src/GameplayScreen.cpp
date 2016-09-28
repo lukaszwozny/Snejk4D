@@ -17,6 +17,8 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 //	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
+
+	snake = new Snake();
 }
 
 void GameplayScreen::update()
