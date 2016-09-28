@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "AbstractScreen.h"
 #include "Scene.h"
-#include "SnakePart.h"
+#include "snake_part.h"
 
 class GameplayScreen
 	:public AbstractScreen

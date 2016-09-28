@@ -1,12 +1,13 @@
-﻿#include "SnakePart.h"
-#include "FileService.h"
+#include "snake_tail.h"
+#include "src/FileService.h"
 
-SnakePart::SnakePart()
+
+SnakeTail::SnakeTail()
 {
 	// Create and compile our GLSL program from the shaders
 	programID = FileService::LoadShaders("shaders/TransformVertexShader.vertexshader", "shaders/TextureFragmentShader.fragmentshader");
 
-	Texture = FileService::LoadBMP("textures/creeper_body.bmp");
+	Texture = FileService::LoadBMP("textures/scene_metal.bmp");
 	// Get a handle for our "myTextureSampler" uniform
 	TextureID = glGetUniformLocation(programID, "myTextureSampler");
 
@@ -14,7 +15,7 @@ SnakePart::SnakePart()
 	MatrixID = glGetUniformLocation(programID, "MVP");
 
 	// Read our .obj file
-	bool res = FileService::LoadOBJ("models/cube.obj", vertices, uvs, normals);
+	bool res = FileService::LoadOBJ("models/cone.obj", vertices, uvs, normals);
 
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
@@ -25,14 +26,15 @@ SnakePart::SnakePart()
 	glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(glm::vec2), &uvs[0], GL_STATIC_DRAW);
 }
 
-SnakePart::~SnakePart()
+
+SnakeTail::~SnakeTail()
 {
 	// Cleanup VBO and shader
 	glDeleteProgram(programID);
 	glDeleteTextures(1, &TextureID);
 }
 
-void SnakePart::Display(glm::mat4 MVP)
+void SnakeTail::Display(glm::mat4 MVP)
 {
 	glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <queue>
-#include "snakepart.h"
+#include "snake_part.h"
 //#include "snakeHead.h"
 //#include "snakeTail.h"
 class Snake

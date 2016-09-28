@@ -78,9 +78,6 @@
     <ClCompile Include="src\ScreenService.cpp">
       <Filter>Source Files\services</Filter>
     </ClCompile>
-    <ClCompile Include="src\SnakePart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\TexturedRextangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -88,6 +85,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="snake_head.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="snake_tail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\snake_part.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -128,9 +131,6 @@
     <ClInclude Include="src\ScreenService.h">
       <Filter>Header Files\services</Filter>
     </ClInclude>
-    <ClInclude Include="src\SnakePart.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\TexturedRextangle.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -150,6 +150,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="snake_head.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="snake_tail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\snake_part.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
