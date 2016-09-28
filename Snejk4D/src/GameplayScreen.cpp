@@ -19,6 +19,16 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 
 	snake = new Snake();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
+	snake->AddPart();
 }
 
 void GameplayScreen::update()
@@ -33,8 +43,11 @@ void GameplayScreen::update()
 	glm::mat4 ModelMatrix = glm::mat4(1.0);
 	glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
+	glm::vec3 test = glm::vec3(1, 1, 1);
+
 	scene.Display(MVP);
-	part.Display(MVP);
+//	part.Display(MVP);
+	snake->Display(MVP, test, 5.0);
 }
 
 void GameplayScreen::render()
