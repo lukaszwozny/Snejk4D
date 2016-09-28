@@ -31,9 +31,6 @@
     <Filter Include="Source Files\screens">
       <UniqueIdentifier>{35e53d0a-1586-4731-b0a5-a9aa62a1d478}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\screens">
-      <UniqueIdentifier>{62902431-c658-40ae-9445-c3b208dcd168}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ui">
       <UniqueIdentifier>{98138c99-b20f-4595-bebe-492eb9a0f159}</UniqueIdentifier>
     </Filter>
@@ -42,43 +39,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AbstractScreen.cpp">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="src\controls.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ControlService.cpp">
-      <Filter>Source Files\services</Filter>
-    </ClCompile>
-    <ClCompile Include="src\FileService.cpp">
-      <Filter>Source Files\services</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game.cpp">
+    <ClCompile Include="AbstractScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameplayScreen.cpp">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="src\main.cpp">
+    <ClCompile Include="controls.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\MainMenuScreen.cpp">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MenuTextButton.cpp">
-      <Filter>Source Files\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene.cpp">
+    <ClCompile Include="ControlService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ScenePart.cpp">
+    <ClCompile Include="FileService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ScreenService.cpp">
-      <Filter>Source Files\services</Filter>
+    <ClCompile Include="food.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\TexturedRextangle.cpp">
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameplayScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTextButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="snake.cpp">
@@ -87,64 +84,67 @@
     <ClCompile Include="snake_head.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="snake_part.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="snake_tail.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\snake_part.cpp">
+    <ClCompile Include="TexturedRextangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\CameraStateEnum.h">
-      <Filter>Header Files\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AbstractScreen.h">
-      <Filter>Header Files\screens</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CollisionEnum.h">
-      <Filter>Header Files\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ControlService.h">
-      <Filter>Header Files\services</Filter>
-    </ClInclude>
-    <ClInclude Include="src\FileService.h">
-      <Filter>Header Files\services</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game.h">
+    <ClInclude Include="AbstractScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\gl_includes.h">
+    <ClInclude Include="CameraStateEnum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MenuTextButton.h">
-      <Filter>Header Files\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene.h">
+    <ClInclude Include="CollisionEnum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ScenePart.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="controls.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ScreenEnum.h">
-      <Filter>Header Files\enums</Filter>
+    <ClInclude Include="ControlService.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ScreenService.h">
-      <Filter>Header Files\services</Filter>
+    <ClInclude Include="FileService.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\TexturedRextangle.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="food.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MainMenuScreen.h">
-      <Filter>Header Files\screens</Filter>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStateEnum.h">
-      <Filter>Header Files\enums</Filter>
+    <ClInclude Include="GameplayScreen.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameplayScreen.h">
-      <Filter>Header Files\screens</Filter>
+    <ClInclude Include="GameStateEnum.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\controls.hpp">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="gl_includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTextButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenEnum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenService.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="snake.h">
       <Filter>Header Files</Filter>
@@ -152,10 +152,13 @@
     <ClInclude Include="snake_head.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="snake_part.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="snake_tail.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\snake_part.h">
+    <ClInclude Include="TexturedRextangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

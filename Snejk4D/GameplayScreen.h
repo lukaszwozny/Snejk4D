@@ -2,7 +2,7 @@
 #include "AbstractScreen.h"
 #include "Scene.h"
 #include "snake_part.h"
-#include "../snake.h"
+#include "snake.h"
 
 class GameplayScreen
 	:public AbstractScreen
