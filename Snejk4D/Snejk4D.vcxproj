@@ -120,6 +120,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="snake.cpp" />
+    <ClCompile Include="snake_head.cpp" />
     <ClCompile Include="src\AbstractScreen.cpp" />
     <ClCompile Include="src\controls.cpp" />
     <ClCompile Include="src\ControlService.cpp" />
@@ -136,6 +138,8 @@
     <ClCompile Include="src\TexturedRextangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="snake.h" />
+    <ClInclude Include="snake_head.h" />
     <ClInclude Include="src\AbstractScreen.h" />
     <ClInclude Include="src\CameraStateEnum.h" />
     <ClInclude Include="src\CollisionEnum.h" />
