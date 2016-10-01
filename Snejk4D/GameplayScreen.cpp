@@ -32,6 +32,8 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 	glfwSetKeyCallback(window, KeyboardButtonCallback);
 
+	control_service = new ControlService(window);
+
 	snake = new Snake();
 	collision_manager.setSnake(snake);
 
@@ -39,6 +41,10 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	dack_janiels = new DackJaniels();
 }
 
+GameplayScreen::~GameplayScreen()
+{
+	delete control_service;
+}
 
 int rand_x = rand() % 60 - 30;
 int rand_z = rand() % 60 - 30;
@@ -49,9 +55,10 @@ void GameplayScreen::update()
 	std::string title = "The Snejk 4D @ FPS: " + std::to_string(fps);
 	glfwSetWindowTitle(window, title.c_str());
 
-	computeMatricesFromInputs(window);
-	glm::mat4 ProjectionMatrix = getProjectionMatrix();
-	glm::mat4 ViewMatrix = getViewMatrix();
+//	computeMatricesFromInputs(window);
+	control_service->ComputeMatrixFromInput();
+	glm::mat4 ProjectionMatrix = control_service->getProjectionMatrix();
+	glm::mat4 ViewMatrix = control_service->getViewMatrix();
 	glm::mat4 ModelMatrix = glm::mat4(1.0);
 	glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
