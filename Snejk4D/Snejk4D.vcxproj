@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractScreen.cpp" />
     <ClCompile Include="coke.cpp" />
+    <ClCompile Include="collision_manager.cpp" />
     <ClCompile Include="controls.cpp" />
     <ClCompile Include="ControlService.cpp" />
     <ClCompile Include="dack_janiels.cpp" />
@@ -45,6 +46,7 @@
     <ClInclude Include="CameraStateEnum.h" />
     <ClInclude Include="coke.h" />
     <ClInclude Include="CollisionEnum.h" />
+    <ClInclude Include="collision_manager.h" />
     <ClInclude Include="controls.hpp" />
     <ClInclude Include="ControlService.h" />
     <ClInclude Include="dack_janiels.h" />

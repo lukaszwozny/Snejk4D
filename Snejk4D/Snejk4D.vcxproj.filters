@@ -58,12 +58,6 @@
     <Filter Include="Source Files\objects\food">
       <UniqueIdentifier>{e4ee9655-5326-448a-8951-71d31a1a2126}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\objects\food\coke">
-      <UniqueIdentifier>{acf8a016-f02a-44da-bdc9-df2840bcfce6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\objects\food\coke">
-      <UniqueIdentifier>{ec9686f7-96dc-471a-92b5-67aa0ca817c3}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -120,10 +114,13 @@
     <ClCompile Include="snake_tail.cpp">
       <Filter>Source Files\objects\snake</Filter>
     </ClCompile>
-    <ClCompile Include="coke.cpp">
-      <Filter>Source Files\objects\food\coke</Filter>
-    </ClCompile>
     <ClCompile Include="dack_janiels.cpp">
+      <Filter>Source Files\objects\food</Filter>
+    </ClCompile>
+    <ClCompile Include="coke.cpp">
+      <Filter>Source Files\objects\food</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -194,10 +191,13 @@
     <ClInclude Include="snake_tail.h">
       <Filter>Header Files\objects\snake</Filter>
     </ClInclude>
-    <ClInclude Include="coke.h">
-      <Filter>Header Files\objects\food\coke</Filter>
-    </ClInclude>
     <ClInclude Include="dack_janiels.h">
+      <Filter>Header Files\objects\food</Filter>
+    </ClInclude>
+    <ClInclude Include="coke.h">
+      <Filter>Header Files\objects\food</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

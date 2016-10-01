@@ -5,6 +5,7 @@
 #include "snake.h"
 #include "coke.h"
 #include "dack_janiels.h"
+#include "collision_manager.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -22,6 +23,8 @@ public:
 
 private:
 	bool debug;
+
+	CollisionManager collision_manager;
 
 	Scene scene;
 	Snake * snake;

@@ -33,6 +33,8 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	glfwSetKeyCallback(window, KeyboardButtonCallback);
 
 	snake = new Snake();
+	collision_manager.setSnake(snake);
+
 	coke = new Coke();
 	dack_janiels = new DackJaniels();
 }
@@ -58,7 +60,11 @@ void GameplayScreen::update()
 	scene.Display(MVP);
 	snake->Display(MVP, getSnakePosition(), getRotateAngle());
 
-	
+	if(collision_manager.CheckTail())
+	{
+		std::cout << "Collison\n";
+	}
+
 	if(debug)
 	{
 		ChangeSnakeSize();
