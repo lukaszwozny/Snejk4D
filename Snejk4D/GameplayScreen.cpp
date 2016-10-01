@@ -34,6 +34,7 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 
 	snake = new Snake();
 	coke = new Coke();
+	dack_janiels = new DackJaniels();
 }
 
 void GameplayScreen::update()
@@ -50,7 +51,8 @@ void GameplayScreen::update()
 
 	glm::vec3 test = glm::vec3(1, 1, 1);
 
-	coke->Display(MVP);
+//	coke->Display(MVP);
+	dack_janiels->Display(MVP);
 
 	moveMatrixFromInputs(window);
 	scene.Display(MVP);

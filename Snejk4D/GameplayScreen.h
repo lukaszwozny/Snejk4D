@@ -4,6 +4,7 @@
 #include "snake_part.h"
 #include "snake.h"
 #include "coke.h"
+#include "dack_janiels.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -26,6 +27,7 @@ private:
 	Snake * snake;
 
 	Coke * coke;
+	DackJaniels * dack_janiels;
 
 	double fps;
 	void FPSCounter();

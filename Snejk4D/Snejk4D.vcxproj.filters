@@ -123,6 +123,9 @@
     <ClCompile Include="coke.cpp">
       <Filter>Source Files\objects\food\coke</Filter>
     </ClCompile>
+    <ClCompile Include="dack_janiels.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controls.hpp">
@@ -193,6 +196,9 @@
     </ClInclude>
     <ClInclude Include="coke.h">
       <Filter>Header Files\objects\food\coke</Filter>
+    </ClInclude>
+    <ClInclude Include="dack_janiels.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

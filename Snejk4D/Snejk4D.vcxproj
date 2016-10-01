@@ -23,6 +23,7 @@
     <ClCompile Include="coke.cpp" />
     <ClCompile Include="controls.cpp" />
     <ClCompile Include="ControlService.cpp" />
+    <ClCompile Include="dack_janiels.cpp" />
     <ClCompile Include="FileService.cpp" />
     <ClCompile Include="food.cpp" />
     <ClCompile Include="game.cpp" />
@@ -46,6 +47,7 @@
     <ClInclude Include="CollisionEnum.h" />
     <ClInclude Include="controls.hpp" />
     <ClInclude Include="ControlService.h" />
+    <ClInclude Include="dack_janiels.h" />
     <ClInclude Include="FileService.h" />
     <ClInclude Include="food.h" />
     <ClInclude Include="game.h" />
