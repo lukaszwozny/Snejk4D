@@ -3,6 +3,7 @@
 
 
 Coke::Coke()
+	:Food()
 {
 	can = new Model("models/coke_can.obj", "textures/coke_can.bmp");
 	top = new Model("models/coke_top.obj", "textures/coke_top.bmp");

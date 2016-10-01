@@ -8,5 +8,8 @@ public:
 	Food();
 	~Food();
 	virtual void Display(glm::mat4 MVP) = 0;
+
+	glm::vec3 position() const;
 private:
+	glm::vec3 position_;
 };

@@ -9,3 +9,7 @@ Food::~Food()
 {
 }
 
+glm::vec3 Food::position() const
+{
+	return position_;
+}
