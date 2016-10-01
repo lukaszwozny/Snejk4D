@@ -1,7 +1,6 @@
 ﻿#include "GameplayScreen.h"
 #include <iostream>
 #include <string>
-#include "controls.hpp"
 
 void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 {
@@ -55,7 +54,6 @@ void GameplayScreen::update()
 	std::string title = "The Snejk 4D @ FPS: " + std::to_string(fps);
 	glfwSetWindowTitle(window, title.c_str());
 
-//	computeMatricesFromInputs(window);
 	control_service->ComputeMatrixFromInput();
 	glm::mat4 ProjectionMatrix = control_service->getProjectionMatrix();
 	glm::mat4 ViewMatrix = control_service->getViewMatrix();
@@ -68,9 +66,9 @@ void GameplayScreen::update()
 	glm::mat4 tmp = glm::translate(MVP, glm::vec3(rand_x, 0, rand_z));
 	dack_janiels->Display(tmp);
 
-	moveMatrixFromInputs(window);
+	control_service->ComputeMoveMatrixFromInputs();
 	scene.Display(MVP);
-	snake->Display(MVP, getSnakePosition(), getRotateAngle());
+	snake->Display(MVP, control_service->getSnakePosition(), control_service->getRotateAngle());
 
 	collision_manager.ChaeckFood(rand_x, rand_z);
 

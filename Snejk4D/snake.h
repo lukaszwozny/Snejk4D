@@ -17,6 +17,7 @@ public:
 	std::vector < std::queue <glm::vec3>* > getPositionBuffers();
 	std::vector < std::queue <float>* > getAngleBuffers();
 private:
+	float speed;
 	const int MIN_SIZE = 7;
 	int size;
 	int buffer_size;

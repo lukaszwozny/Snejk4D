@@ -1,11 +1,11 @@
 #include "snake.h"
-#include "controls.hpp"
 
 
 Snake::Snake()
 {
+	speed = 10.0f;
 	size = 0;
-	buffer_size = 200.0f / getSnakeSpeed();
+	buffer_size = 200.0f / speed;
 	for (int i = 0; i < MIN_SIZE; ++i)
 		AddPart();
 }

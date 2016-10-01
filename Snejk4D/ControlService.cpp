@@ -74,6 +74,52 @@ void ControlService::ComputeMatrixFromInput()
 	lastTime = currentTime;
 }
 
+void ControlService::ComputeMoveMatrixFromInputs()
+{
+	static double movelastTime = glfwGetTime();
+	static double rotatelastTime = glfwGetTime();
+
+	double currentTime = glfwGetTime();
+	float movedeltaTime = float(currentTime - movelastTime);
+	float rotatedeltaTime = float(currentTime - rotatelastTime);
+
+	glm::vec3 move_direction(
+		sin(rotate_snake_angle),
+		0,
+		cos(rotate_snake_angle)
+	);
+
+	//always go on
+	if (movedeltaTime > 0.01f) {
+		snake_position += 0.02f*move_direction*move_snake_speed;
+		movelastTime = currentTime;
+	}
+	// Move backward
+	if (glfwGetKey(window_, GLFW_KEY_S) == GLFW_PRESS) {
+		/*if (movedeltaTime > 0.02) {
+		snake_position -= move_direction*0.05f;
+		movedeltaTime = currentTime;
+		}*/
+	}
+	// Strafe right
+	if (glfwGetKey(window_, GLFW_KEY_D) == GLFW_PRESS) {
+		if (rotatelastTime > 1.0f / 60.0f) {
+			rotate_snake_angle -= /* dizzy* */rotate_snake_speed;
+			rotatelastTime = currentTime;
+		}
+	}
+	// Strafe left
+	if (glfwGetKey(window_, GLFW_KEY_A) == GLFW_PRESS) {
+		if (rotatelastTime > 1.0f / 60.0f) {
+			rotate_snake_angle += /* dizzy* */rotate_snake_speed;
+			rotatelastTime = currentTime;
+		}
+	}
+
+	MovewMatrix = glm::translate(glm::mat4(1.0), snake_position);
+	MovewMatrix = glm::rotate(MovewMatrix, rotate_snake_angle, glm::vec3(0, 1, 0));
+}
+
 /*
 	Getters and setters
 */
@@ -92,4 +138,14 @@ glm::mat4 ControlService::getProjectionMatrix()
 glm::mat4 ControlService::getMoveMatrix()
 {
 	return MovewMatrix;
+}
+
+glm::vec3 ControlService::getSnakePosition()
+{
+	return snake_position;
+}
+
+float ControlService::getRotateAngle()
+{
+	return rotate_snake_angle;
 }
