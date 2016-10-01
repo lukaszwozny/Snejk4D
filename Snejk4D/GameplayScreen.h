@@ -1,10 +1,12 @@
 ﻿#pragma once
+#include <vector>
 #include "AbstractScreen.h"
 #include "Scene.h"
 #include "snake_part.h"
 #include "snake.h"
 #include "coke.h"
 #include "dack_janiels.h"
+#include "food.h"
 #include "collision_manager.h"
 #include "ControlService.h"
 
@@ -34,6 +36,8 @@ private:
 
 	Coke * coke;
 	DackJaniels * dack_janiels;
+
+
 
 	double fps;
 	void FPSCounter();

@@ -1,5 +1,5 @@
 #pragma once
-#include "food.h"
+#include "model.h"
 
 class Coke
 {
@@ -8,8 +8,8 @@ public:
 	~Coke();
 	void Display(glm::mat4 MVP);
 private:
-	Food* can;
-	Food* top;
-	Food* bottom;
+	Model* can;
+	Model* top;
+	Model* bottom;
 };
 

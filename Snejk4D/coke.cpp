@@ -4,9 +4,9 @@
 
 Coke::Coke()
 {
-	can = new Food("models/coke_can.obj", "textures/coke_can.bmp");
-	top = new Food("models/coke_top.obj", "textures/coke_top.bmp");
-	bottom = new Food("models/coke_bottom.obj", "textures/coke_top.bmp");
+	can = new Model("models/coke_can.obj", "textures/coke_can.bmp");
+	top = new Model("models/coke_top.obj", "textures/coke_top.bmp");
+	bottom = new Model("models/coke_bottom.obj", "textures/coke_top.bmp");
 }
 
 

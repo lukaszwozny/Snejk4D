@@ -1,6 +1,6 @@
 #pragma once
 #include "gl_includes.h"
-#include "food.h"
+#include "model.h"
 
 class DackJaniels
 {
@@ -9,8 +9,8 @@ public:
 	~DackJaniels();
 	void Display(glm::mat4 MVP);
 private:
-	Food* bottle;
-	Food* label;
-	Food* cork;
+	Model* bottle;
+	Model* label;
+	Model* cork;
 };
 
