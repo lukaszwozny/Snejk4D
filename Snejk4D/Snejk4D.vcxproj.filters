@@ -40,15 +40,36 @@
     <Filter Include="Header Files\screens">
       <UniqueIdentifier>{f4234b70-4359-44b7-845c-8219ec1e5924}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\objects">
+      <UniqueIdentifier>{02529d1a-21f1-44f4-af1b-2d6603557b93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\objects\snake">
+      <UniqueIdentifier>{a2be06e5-b19d-42ca-89e3-2acbe850240b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\objects">
+      <UniqueIdentifier>{5fb9e1c7-ca71-449b-b55d-4b200b892e0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\objects\snake">
+      <UniqueIdentifier>{b5e00ca7-36a6-42ef-8f77-e56a0b8b8c98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\objects\food">
+      <UniqueIdentifier>{52fd5393-e7d6-48f1-b143-abfa4b289d60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\objects\food">
+      <UniqueIdentifier>{e4ee9655-5326-448a-8951-71d31a1a2126}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\objects\food\coke">
+      <UniqueIdentifier>{acf8a016-f02a-44da-bdc9-df2840bcfce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\objects\food\coke">
+      <UniqueIdentifier>{ec9686f7-96dc-471a-92b5-67aa0ca817c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="controls.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="food.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
@@ -58,18 +79,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ScenePart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="snake.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="snake_head.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="snake_part.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="snake_tail.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TexturedRextangle.cpp">
@@ -96,12 +105,27 @@
     <ClCompile Include="ScreenService.cpp">
       <Filter>Source Files\services</Filter>
     </ClCompile>
+    <ClCompile Include="food.cpp">
+      <Filter>Source Files\objects\food</Filter>
+    </ClCompile>
+    <ClCompile Include="snake.cpp">
+      <Filter>Source Files\objects\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="snake_head.cpp">
+      <Filter>Source Files\objects\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="snake_part.cpp">
+      <Filter>Source Files\objects\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="snake_tail.cpp">
+      <Filter>Source Files\objects\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="coke.cpp">
+      <Filter>Source Files\objects\food\coke</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controls.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="food.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
@@ -120,18 +144,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScreenEnum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="snake.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="snake_head.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="snake_part.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="snake_tail.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TexturedRextangle.h">
@@ -163,6 +175,24 @@
     </ClInclude>
     <ClInclude Include="MenuTextButton.h">
       <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="food.h">
+      <Filter>Header Files\objects\food</Filter>
+    </ClInclude>
+    <ClInclude Include="snake.h">
+      <Filter>Header Files\objects\snake</Filter>
+    </ClInclude>
+    <ClInclude Include="snake_head.h">
+      <Filter>Header Files\objects\snake</Filter>
+    </ClInclude>
+    <ClInclude Include="snake_part.h">
+      <Filter>Header Files\objects\snake</Filter>
+    </ClInclude>
+    <ClInclude Include="snake_tail.h">
+      <Filter>Header Files\objects\snake</Filter>
+    </ClInclude>
+    <ClInclude Include="coke.h">
+      <Filter>Header Files\objects\food\coke</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

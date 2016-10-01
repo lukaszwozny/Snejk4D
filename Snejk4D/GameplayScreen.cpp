@@ -27,7 +27,7 @@ void GameplayScreen::KeyboardButtonCallback(GLFWwindow* window, int button, int 
 GameplayScreen::GameplayScreen(GLFWwindow* window)
 	: AbstractScreen(window)
 {
-//	glfwSetMouseButtonCallback(window, MouseButtonCallback);
+	debug = true;
 
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 	glfwSetKeyCallback(window, KeyboardButtonCallback);
@@ -51,19 +51,11 @@ void GameplayScreen::update()
 	glm::vec3 test = glm::vec3(1, 1, 1);
 
 	scene.Display(MVP);
-//	part.Display(MVP);
 	snake->Display(MVP, getSnakePosition(), getRotateAngle());
 
-	switch (part_add_n)
+	if(debug)
 	{
-	case -1:
-		snake->RemovePart();
-		part_add_n = 0;
-		break;
-	case 1:
-		snake->AddPart();
-		part_add_n = 0;
-		break;
+		ChangeSnakeSize();
 	}
 }
 
@@ -89,6 +81,21 @@ void GameplayScreen::setBackgroundColor()
 
 	// Cull triangles which normal is not towards the camera
 	glEnable(GL_CULL_FACE);
+}
+
+void GameplayScreen::ChangeSnakeSize()
+{
+	switch (part_add_n)
+	{
+	case -1:
+		snake->RemovePart();
+		part_add_n = 0;
+		break;
+	case 1:
+		snake->AddPart();
+		part_add_n = 0;
+		break;
+	}
 }
 
 void GameplayScreen::FPSCounter()

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AbstractScreen.cpp" />
+    <ClCompile Include="coke.cpp" />
     <ClCompile Include="controls.cpp" />
     <ClCompile Include="ControlService.cpp" />
     <ClCompile Include="FileService.cpp" />
@@ -41,6 +42,7 @@
   <ItemGroup>
     <ClInclude Include="AbstractScreen.h" />
     <ClInclude Include="CameraStateEnum.h" />
+    <ClInclude Include="coke.h" />
     <ClInclude Include="CollisionEnum.h" />
     <ClInclude Include="controls.hpp" />
     <ClInclude Include="ControlService.h" />

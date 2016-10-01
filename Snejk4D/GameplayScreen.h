@@ -15,7 +15,12 @@ public:
 	void render() override;
 	void setBackgroundColor() override;
 
+	// debug
+	void ChangeSnakeSize();
+
 private:
+	bool debug;
+
 	Scene scene;
 	Snake * snake;
 	SnakePart part;
