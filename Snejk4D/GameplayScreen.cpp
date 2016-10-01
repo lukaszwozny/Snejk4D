@@ -33,6 +33,7 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	glfwSetKeyCallback(window, KeyboardButtonCallback);
 
 	snake = new Snake();
+	coke = new Coke();
 }
 
 void GameplayScreen::update()
@@ -42,7 +43,6 @@ void GameplayScreen::update()
 	glfwSetWindowTitle(window, title.c_str());
 
 	computeMatricesFromInputs(window);
-	moveMatrixFromInputs(window);
 	glm::mat4 ProjectionMatrix = getProjectionMatrix();
 	glm::mat4 ViewMatrix = getViewMatrix();
 	glm::mat4 ModelMatrix = glm::mat4(1.0);
@@ -50,9 +50,13 @@ void GameplayScreen::update()
 
 	glm::vec3 test = glm::vec3(1, 1, 1);
 
+	coke->Display(MVP);
+
+	moveMatrixFromInputs(window);
 	scene.Display(MVP);
 	snake->Display(MVP, getSnakePosition(), getRotateAngle());
 
+	
 	if(debug)
 	{
 		ChangeSnakeSize();
