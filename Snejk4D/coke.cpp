@@ -22,7 +22,6 @@ Coke::~Coke()
 void Coke::Display(glm::mat4 MVP)
 {
 	MVP = glm::translate(MVP, glm::vec3(0, -0.1, 0));
-	MVP = glm::translate(MVP, position_);
 	can->Display(MVP);
 	top->Display(MVP);
 	bottom->Display(MVP);

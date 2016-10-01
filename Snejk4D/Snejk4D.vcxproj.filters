@@ -203,5 +203,8 @@
     <ClInclude Include="food_enum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FoodInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

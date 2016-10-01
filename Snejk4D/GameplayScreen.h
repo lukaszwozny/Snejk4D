@@ -9,6 +9,7 @@
 #include "food.h"
 #include "collision_manager.h"
 #include "ControlService.h"
+#include "FoodInfo.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -32,12 +33,17 @@ private:
 	CollisionManager collision_manager;
 
 	Scene scene;
-	Snake * snake;
 
-	std::vector<Food*> foods_;
+	// Models
+	Snake * snake;
+	Coke * coke;
+	DackJaniels * dack_janiels;
+
+	std::vector<FoodInfo*> food_vec_;
 
 	double fps;
 	void FPSCounter();
 
+	void LoadAll();
 	void DisplayFood(glm::mat4 MVP);
 };

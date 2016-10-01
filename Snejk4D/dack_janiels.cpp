@@ -23,7 +23,6 @@ DackJaniels::~DackJaniels()
 void DackJaniels::Display(glm::mat4 MVP)
 {
 	MVP = glm::translate(MVP, glm::vec3(0, 1.8f, 0));
-	MVP = glm::translate(MVP, position_);
 	bottle->Display(MVP);
 	label->Display(MVP);
 	cork->Display(MVP);

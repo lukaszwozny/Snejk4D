@@ -11,7 +11,7 @@ CollisionManager::~CollisionManager()
 {
 }
 
-void CollisionManager::ChaeckFood(std::vector<Food*>& foods_)
+void CollisionManager::ChaeckFood(std::vector<FoodInfo*>& foods_)
 {
 	float head_xpos = 0;
 	float head_zpos = 0;
@@ -28,19 +28,23 @@ void CollisionManager::ChaeckFood(std::vector<Food*>& foods_)
 
 	for(int i=0; i< foods_.size(); ++i)
 	{
-		float food_x = foods_[i]->getPosition().x;
-		float food_z = foods_[i]->getPosition().z;
+		float food_x = foods_[i]->position.x;
+		float food_z = foods_[i]->position.z;
 		if (!(abs(head_xpos - food_x) > 2 || abs(head_zpos - food_z) > 2))
 		{
-			switch (foods_[i]->getType())
+			switch (foods_[i]->type)
 			{
 			case COKE:
-				std::cout << "Coke\n";
+				snake->AddPart();
 				break;
 			case DACK_JANIELS:
-				std::cout << "Dack Janiels\n";
 				break;
 			}
+			foods_.push_back(new FoodInfo(foods_[i]->type));
+
+			delete foods_[i];
+			foods_.erase(foods_.begin() + i);
+
 		}
 	}
 }

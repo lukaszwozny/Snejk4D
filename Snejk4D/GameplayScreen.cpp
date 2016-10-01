@@ -33,12 +33,11 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 
 	control_service = new ControlService(window);
 
-	snake = new Snake();
+	LoadAll();
 	collision_manager.setSnake(snake);
 
-	foods_.push_back(new Coke());
-	foods_.push_back(new Coke());
-	foods_.push_back(new DackJaniels());
+	food_vec_.push_back(new FoodInfo(FoodEnum::COKE));
+	food_vec_.push_back(new FoodInfo(FoodEnum::DACK_JANIELS));
 }
 
 GameplayScreen::~GameplayScreen()
@@ -71,7 +70,7 @@ void GameplayScreen::update()
 	scene.Display(MVP);
 	snake->Display(MVP, control_service->getSnakePosition(), control_service->getRotateAngle());
 
-	collision_manager.ChaeckFood(foods_);
+	collision_manager.ChaeckFood(food_vec_);
 
 	if(collision_manager.CheckTail())
 	{
@@ -143,10 +142,26 @@ void GameplayScreen::FPSCounter()
 	frames_counter++;
 }
 
+void GameplayScreen::LoadAll()
+{
+	snake = new Snake();
+	coke = new Coke();
+	dack_janiels = new DackJaniels();
+}
+
 void GameplayScreen::DisplayFood(glm::mat4 MVP)
 {
-	for(int i=0; i<foods_.size(); ++i)
+	for(int i=0; i<food_vec_.size(); ++i)
 	{
-		foods_[i]->Display(MVP);
+		glm::mat4 temp = glm::translate(MVP, food_vec_[i]->position);
+		switch (food_vec_[i]->type)
+		{
+		case COKE:
+			coke->Display(temp);
+			break;
+		case DACK_JANIELS:
+			dack_janiels->Display(temp);
+			break;
+		}
 	}
 }
