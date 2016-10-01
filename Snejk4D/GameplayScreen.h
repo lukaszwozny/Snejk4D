@@ -34,11 +34,10 @@ private:
 	Scene scene;
 	Snake * snake;
 
-	Coke * coke;
-	DackJaniels * dack_janiels;
-
-
+	std::vector<Food*> foods_;
 
 	double fps;
 	void FPSCounter();
+
+	void DisplayFood(glm::mat4 MVP);
 };

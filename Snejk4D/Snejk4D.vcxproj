@@ -51,6 +51,7 @@
     <ClInclude Include="dack_janiels.h" />
     <ClInclude Include="FileService.h" />
     <ClInclude Include="food.h" />
+    <ClInclude Include="food_enum.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="GameplayScreen.h" />
     <ClInclude Include="GameStateEnum.h" />

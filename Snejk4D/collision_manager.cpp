@@ -11,7 +11,7 @@ CollisionManager::~CollisionManager()
 {
 }
 
-void CollisionManager::ChaeckFood(int foodX, int foodZ)
+void CollisionManager::ChaeckFood(std::vector<Food*>& foods_)
 {
 	float head_xpos = 0;
 	float head_zpos = 0;
@@ -26,13 +26,23 @@ void CollisionManager::ChaeckFood(int foodX, int foodZ)
 	head_xpos = pos_test.x;
 	head_zpos = pos_test.z;
 
-	if (!(abs(head_xpos - foodX) > 2 || abs(head_zpos - foodZ) > 2))
+	for(int i=0; i< foods_.size(); ++i)
 	{
-		std::cout << "Food collision\n";
+		float food_x = foods_[i]->getPosition().x;
+		float food_z = foods_[i]->getPosition().z;
+		if (!(abs(head_xpos - food_x) > 2 || abs(head_zpos - food_z) > 2))
+		{
+			switch (foods_[i]->getType())
+			{
+			case COKE:
+				std::cout << "Coke\n";
+				break;
+			case DACK_JANIELS:
+				std::cout << "Dack Janiels\n";
+				break;
+			}
+		}
 	}
-//	if (!(abs(head_xpos - dizzyX) > 2 || abs(head_zpos - dizzyZ) > 2))
-
-
 }
 
 bool CollisionManager::CheckTail()

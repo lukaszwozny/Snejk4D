@@ -14,11 +14,11 @@ void ControlService::ComputeMatrixFromInput()
 	double currentTime = glfwGetTime();
 	float deltaTime = float(currentTime - lastTime);
 
-	// Get mouse position
+	// Get mouse getPosition
 	double xpos, ypos;
 	glfwGetCursorPos(window_, &xpos, &ypos);
 
-	// Reset mouse position for next frame
+	// Reset mouse getPosition for next frame
 	glfwSetCursorPos(window_, 1024 / 2, 768 / 2);
 
 	// Compute new orientation
@@ -66,7 +66,7 @@ void ControlService::ComputeMatrixFromInput()
 	// Camera matrix
 	ViewMatrix = glm::lookAt(
 		position,           // Camera is here
-		position + direction, // and looks here : at the same position, plus "direction"
+		position + direction, // and looks here : at the same getPosition, plus "direction"
 		up                  // Head is up (set to 0,-1,0 to look upside-down)
 	);
 

@@ -200,5 +200,8 @@
     <ClInclude Include="model.h">
       <Filter>Header Files\objects</Filter>
     </ClInclude>
+    <ClInclude Include="food_enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

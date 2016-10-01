@@ -22,7 +22,7 @@ private:
 	glm::mat4 ProjectionMatrix;
 	glm::mat4 ViewMatrix;
 
-	// Initial position : on +Z
+	// Initial getPosition : on +Z
 	glm::vec3 position = glm::vec3(0, 0, 5);
 	// Initial horizontal angle : toward -Z
 	float horizontalAngle = 3.14f;
