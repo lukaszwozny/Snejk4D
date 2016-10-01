@@ -1,5 +1,5 @@
 #include "collision_manager.h"
-
+#include <iostream>
 
 
 CollisionManager::CollisionManager()
@@ -11,8 +11,28 @@ CollisionManager::~CollisionManager()
 {
 }
 
-void CollisionManager::Chaeck(int foodX, int foodZ)
+void CollisionManager::ChaeckFood(int foodX, int foodZ)
 {
+	float head_xpos = 0;
+	float head_zpos = 0;
+	static bool first = true;
+
+	std::vector<std::queue<glm::vec3>*> position_buffers;
+
+	position_buffers = snake->getPositionBuffers();
+	glm::vec3 pos_test;
+	pos_test = position_buffers[0]->front();
+
+	head_xpos = pos_test.x;
+	head_zpos = pos_test.z;
+
+	if (!(abs(head_xpos - foodX) > 2 || abs(head_zpos - foodZ) > 2))
+	{
+		std::cout << "Food collision\n";
+	}
+//	if (!(abs(head_xpos - dizzyX) > 2 || abs(head_zpos - dizzyZ) > 2))
+
+
 }
 
 bool CollisionManager::CheckTail()

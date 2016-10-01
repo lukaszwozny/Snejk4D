@@ -7,7 +7,7 @@ public:
 	CollisionManager();
 	~CollisionManager();
 
-	void Chaeck(int foodX, int foodZ);
+	void ChaeckFood(int foodX, int foodZ);
 	bool CheckTail();
 
 	void setSnake(Snake* snake);

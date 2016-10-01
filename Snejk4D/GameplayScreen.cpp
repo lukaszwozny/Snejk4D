@@ -39,6 +39,10 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	dack_janiels = new DackJaniels();
 }
 
+
+int rand_x = rand() % 60 - 30;
+int rand_z = rand() % 60 - 30;
+
 void GameplayScreen::update()
 {
 	FPSCounter();
@@ -54,14 +58,18 @@ void GameplayScreen::update()
 	glm::vec3 test = glm::vec3(1, 1, 1);
 
 //	coke->Display(MVP);
-	dack_janiels->Display(MVP);
+	glm::mat4 tmp = glm::translate(MVP, glm::vec3(rand_x, 0, rand_z));
+	dack_janiels->Display(tmp);
 
 	moveMatrixFromInputs(window);
 	scene.Display(MVP);
 	snake->Display(MVP, getSnakePosition(), getRotateAngle());
 
+	collision_manager.ChaeckFood(rand_x, rand_z);
+
 	if(collision_manager.CheckTail())
 	{
+		// TODO Game Over
 		std::cout << "Collison\n";
 	}
 
