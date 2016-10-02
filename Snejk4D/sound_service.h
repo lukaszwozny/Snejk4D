@@ -17,6 +17,7 @@ public:
 	static int DeleteSnejk();
 private:
 	static ALuint source_music;
+	static ALuint source_snejk;
 	static int endWithError(char* msg, int error = 0);
 };
 

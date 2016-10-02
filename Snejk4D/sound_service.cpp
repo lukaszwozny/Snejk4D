@@ -7,6 +7,7 @@
 #define	SNEJK_WAVE_FILE		"sounds/happy_mono.wav"
 
 ALuint SoundService::source_music = 0;
+ALuint SoundService::source_snejk = 0;
 
 SoundService::SoundService()
 {
