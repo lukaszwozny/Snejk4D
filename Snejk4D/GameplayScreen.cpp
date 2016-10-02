@@ -40,8 +40,25 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	food_vec_.push_back(new FoodInfo(FoodEnum::COKE));
 	food_vec_.push_back(new FoodInfo(FoodEnum::DACK_JANIELS));
 
-
+	wall_part_ = new Model("models/cube.obj", "textures/scene_metal.bmp");
 	scene_builder = new SceneBuilder();
+	scene_builder->LoadMap(obstacle_vec_);
+
+	std::cout << "Size: " << obstacle_vec_.size() << "\n";
+	for (int i = 0; i<obstacle_vec_.size(); ++i)
+	{
+		glm::vec3 tmp = obstacle_vec_[i]->position;
+		switch (obstacle_vec_[i]->type)
+		{
+		case NONE:
+			std::cout << "NONE \n";
+			break;
+		case WALL:
+			std::cout << "WALL" << tmp.x << " " << tmp.y << " " << tmp.z <<  "\n";
+//			wall_part_->Display(temp);
+			break;
+		}
+	}
 }
 
 GameplayScreen::~GameplayScreen()
@@ -69,6 +86,7 @@ void GameplayScreen::update()
 //	coke->Display(MVP);
 	glm::mat4 tmp = glm::translate(MVP, glm::vec3(rand_x, 0, rand_z));
 	DisplayFood(MVP);
+	DisplayObstacle(MVP);
 
 	control_service->ComputeMoveMatrixFromInputs();
 	scene.Display(MVP);
@@ -165,6 +183,22 @@ void GameplayScreen::DisplayFood(glm::mat4 MVP)
 			break;
 		case DACK_JANIELS:
 			dack_janiels->Display(temp);
+			break;
+		}
+	}
+}
+
+void GameplayScreen::DisplayObstacle(glm::mat4 MVP)
+{
+	for (int i = 0; i<obstacle_vec_.size(); ++i)
+	{
+		glm::mat4 temp = glm::translate(MVP, obstacle_vec_[i]->position);
+		switch (obstacle_vec_[i]->type)
+		{
+		case NONE:
+			break;
+		case WALL:
+			wall_part_->Display(temp);
 			break;
 		}
 	}

@@ -38,14 +38,17 @@ private:
 
 	// Models
 	Snake * snake;
+	Model * wall_part_;
 	Coke * coke;
 	DackJaniels * dack_janiels;
 
 	std::vector<FoodInfo*> food_vec_;
+	std::vector<Obstacle*> obstacle_vec_;
 
 	double fps;
 	void FPSCounter();
 
 	void LoadAll();
 	void DisplayFood(glm::mat4 MVP);
+	void DisplayObstacle(glm::mat4 MVP);
 };
