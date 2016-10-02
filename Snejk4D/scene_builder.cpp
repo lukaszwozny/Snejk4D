@@ -23,3 +23,8 @@ SceneBuilder::SceneBuilder()
 SceneBuilder::~SceneBuilder()
 {
 }
+
+void SceneBuilder::Build()
+{
+
+}

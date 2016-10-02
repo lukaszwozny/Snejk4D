@@ -62,6 +62,8 @@
     <ClInclude Include="map.h" />
     <ClInclude Include="MenuTextButton.h" />
     <ClInclude Include="model.h" />
+    <ClInclude Include="obstacle.h" />
+    <ClInclude Include="obstacle_enum.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ScenePart.h" />
     <ClInclude Include="scene_builder.h" />

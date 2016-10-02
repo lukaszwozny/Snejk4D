@@ -7,6 +7,7 @@ class SceneBuilder
 public:
 	SceneBuilder();
 	~SceneBuilder();
+	void Build();
 private:
 	Map map_;
 };
