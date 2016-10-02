@@ -45,6 +45,7 @@
     <ClCompile Include="snake_part.cpp" />
     <ClCompile Include="snake_tail.cpp" />
     <ClCompile Include="sound_service.cpp" />
+    <ClCompile Include="Text2DService.cpp" />
     <ClCompile Include="TexturedRextangle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +84,7 @@
     <ClInclude Include="snake_part.h" />
     <ClInclude Include="snake_tail.h" />
     <ClInclude Include="sound_service.h" />
+    <ClInclude Include="Text2DService.h" />
     <ClInclude Include="TexturedRextangle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

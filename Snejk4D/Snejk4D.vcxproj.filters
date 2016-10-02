@@ -141,6 +141,9 @@
     <ClCompile Include="framework\LoadOAL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Text2DService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -250,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="framework\LoadOAL.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Text2DService.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
