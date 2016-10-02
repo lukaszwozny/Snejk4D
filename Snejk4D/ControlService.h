@@ -54,6 +54,4 @@ private:
 
 	glm::vec3 camera_on_snake_position;
 	float camera_on_snake_angle;
-
-	void CheckCameraStateFromInput();
 };

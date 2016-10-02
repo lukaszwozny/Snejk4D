@@ -211,60 +211,6 @@ void ControlService::ComputeMoveMatrixFromInputs()
 	MovewMatrix = glm::rotate(MovewMatrix, rotate_snake_angle, glm::vec3(0, 1, 0));
 }
 
-void ControlService::CheckCameraStateFromInput()
-{
-	switch (camera_state_)
-	{
-	case CLASSIC_VIEW:
-		horizontalAngle = -4.70501f;
-		verticalAngle = -1.365f;
-		position = glm::vec3(0, 81, 27);
-		break;
-	case AERIAL_VIEW:
-		horizontalAngle = -4.48501f;
-		verticalAngle = -0.675f;
-		position = glm::vec3(-16, 20, 22);
-		break;
-	case ON_SNAKE_VIEW:
-		horizontalAngle = camera_on_snake_angle;
-		verticalAngle = -0.2f;
-		std::cout << snake->getPositionBuffers()[0]->front().x << "\n";
-		position = snake->getPositionBuffers()[0]->front() + glm::vec3(0, 2.5, 0);
-		//		position = camera_on_snake_position + glm::vec3(0, 2.5, 0);
-		break;
-	case FREE_VIEW:
-		horizontalAngle += mouseSpeed * float(1024 / 2 - mouse_x_);
-		verticalAngle += mouseSpeed * float(768 / 2 - mouse_y_);
-		//
-		//		// Move forward
-		//		if (glfwGetKey(window_, GLFW_KEY_UP) == GLFW_PRESS) {
-		//			position += direction * deltaTime * speed;
-		//		}
-		//		// Move backward
-		//		if (glfwGetKey(window_, GLFW_KEY_DOWN) == GLFW_PRESS) {
-		//			position -= direction * deltaTime * speed;
-		//		}
-		//		// Strafe right
-		//		if (glfwGetKey(window_, GLFW_KEY_RIGHT) == GLFW_PRESS) {
-		//			position += right * deltaTime * speed;
-		//		}
-		//		// Strafe left
-		//		if (glfwGetKey(window_, GLFW_KEY_LEFT) == GLFW_PRESS) {
-		//			position -= std::right * deltaTime * speed;
-		//		}
-		//		// Strafe up
-		//		if (glfwGetKey(window_, GLFW_KEY_SPACE) == GLFW_PRESS) {
-		//			position += up2 * deltaTime * speed;
-		//		}
-		//		// Strafe down
-		//		if (glfwGetKey(window_, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
-		//			position -= up2 * deltaTime * speed;
-		//		}
-
-		break;
-	}
-}
-
 /*
 	Getters and setters
 */

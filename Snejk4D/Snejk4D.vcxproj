@@ -34,6 +34,7 @@
     <ClCompile Include="model.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ScenePart.cpp" />
+    <ClCompile Include="scene_builder.cpp" />
     <ClCompile Include="ScreenService.cpp" />
     <ClCompile Include="snake.cpp" />
     <ClCompile Include="snake_head.cpp" />
@@ -58,10 +59,12 @@
     <ClInclude Include="GameStateEnum.h" />
     <ClInclude Include="gl_includes.h" />
     <ClInclude Include="MainMenuScreen.h" />
+    <ClInclude Include="map.h" />
     <ClInclude Include="MenuTextButton.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ScenePart.h" />
+    <ClInclude Include="scene_builder.h" />
     <ClInclude Include="ScreenEnum.h" />
     <ClInclude Include="ScreenService.h" />
     <ClInclude Include="snake.h" />

@@ -10,6 +10,7 @@
 #include "collision_manager.h"
 #include "ControlService.h"
 #include "FoodInfo.h"
+#include "scene_builder.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -31,6 +32,7 @@ private:
 
 	ControlService * control_service;
 	CollisionManager collision_manager;
+	SceneBuilder * scene_builder;
 
 	Scene scene;
 

@@ -39,6 +39,9 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 
 	food_vec_.push_back(new FoodInfo(FoodEnum::COKE));
 	food_vec_.push_back(new FoodInfo(FoodEnum::DACK_JANIELS));
+
+
+	scene_builder = new SceneBuilder();
 }
 
 GameplayScreen::~GameplayScreen()
