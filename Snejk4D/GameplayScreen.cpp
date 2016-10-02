@@ -34,7 +34,8 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	control_service = new ControlService(window);
 
 	LoadAll();
-	collision_manager.setSnake(snake);
+	collision_manager.setSnake(snake); //TODO change to pointer
+	control_service->setSnake(snake);
 
 	food_vec_.push_back(new FoodInfo(FoodEnum::COKE));
 	food_vec_.push_back(new FoodInfo(FoodEnum::DACK_JANIELS));
