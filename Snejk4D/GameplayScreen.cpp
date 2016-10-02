@@ -1,14 +1,28 @@
 ﻿#include "GameplayScreen.h"
 #include <iostream>
 #include <string>
+#include "game.h"
 
 bool GameplayScreen::is_over = false;
+
+bool is_again = false;
+bool is_menu = false;
 
 void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 	{
 		std::cout << "LMB click\n";
+		if(is_again)
+		{
+			std::cout << "Again\n";
+			is_again = false;
+		}
+		if (is_menu)
+		{
+			std::cout << "menu\n";
+			is_menu = false;
+		}
 	}
 }
 
@@ -82,11 +96,71 @@ void GameplayScreen::update()
 	scene.Display(MVP);
 	snake->Display(MVP, control_service->getSnakePosition(), control_service->getRotateAngle());
 
-
 	if (!is_over)
 	{
 		collision_manager.CheckFood(food_vec_);
 		collision_manager.CheckObstackle(obstacle_vec_);
+	}
+
+	if (is_over)
+	{
+		char* game_over = "GAME OVER";
+		int size = 80;
+		int x_pos = Game::WIDTH / 2 - size*6;
+		int y_pos = Game::HEIGHT / 2;
+		text_service->printText2D(game_over, x_pos, y_pos, size);
+
+		// Again button
+		double mouse_x, mouse_y;
+		glfwGetCursorPos(window, &mouse_x, &mouse_y);
+
+		// again? position
+		float left = Game::WIDTH / 2 * 0.5f;
+		float right = Game::WIDTH - 0.5f * 1024 / 2;
+		float up = 768 / 2 + 20;
+		float down = up - 51.0f;
+
+		if (mouse_x > left && mouse_x < right
+			&& mouse_y > down && mouse_y < up)
+		{
+			is_again = true;
+			size = 80;
+		}
+		else
+		{
+			is_again = false;
+			size = 50;
+		}
+
+		char* play_again = "again?";
+		x_pos = Game::WIDTH / 2 - 140 - size * 3;
+		y_pos = Game::HEIGHT / 2 - 100;
+		text_service->printText2D(play_again, x_pos, y_pos, size);
+
+		// Back to menu button
+		// again? position
+		int interval = -150;
+		float left_menu = Game::WIDTH / 2 * 0.5f - interval;
+		float right_menu = Game::WIDTH - 0.5f * 1024 / 2 - interval;
+		float up_menu = 768 / 2 + 20 - interval;
+		float down_menu = up - 51.0f - interval;
+
+		if (mouse_x > left_menu && mouse_x < right_menu
+			&& mouse_y > down_menu && mouse_y < up_menu)
+		{
+			is_menu = true;
+			size = 80;
+		}
+		else
+		{
+			is_menu = false;
+			size = 50;
+		}
+
+		char* main_menu = "main menu";
+		x_pos = Game::WIDTH / 2 - 180 - size * 3.5;
+		y_pos = Game::HEIGHT / 2 - 220;
+		text_service->printText2D(main_menu, x_pos, y_pos, size);
 	}
 
 	if (collision_manager.CheckTail())
@@ -160,8 +234,11 @@ void GameplayScreen::FPSCounter()
 
 	frames_counter++;
 
-	std::string fps_s = std::to_string(int(fps)) + "fps";
-	text_service->printText2D(fps_s.c_str(), 0, 550, 40);
+	std::string fps_s = std::to_string(int(fps)) + " fps";
+	text_service->printText2D(fps_s.c_str(), 0, 550, 30);
+
+	std::string score = "Score: "+  std::to_string(snake->getSize()-7);
+	text_service->printText2D(score.c_str(), 370, 550, 40);
 }
 
 void GameplayScreen::LoadAll()
