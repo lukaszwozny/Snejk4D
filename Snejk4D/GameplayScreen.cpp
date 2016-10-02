@@ -82,7 +82,6 @@ void GameplayScreen::update()
 	scene.Display(MVP);
 	snake->Display(MVP, control_service->getSnakePosition(), control_service->getRotateAngle());
 
-	text_service->printText2D("test", 500, 500, 60);
 
 	if (!is_over)
 	{
@@ -160,6 +159,9 @@ void GameplayScreen::FPSCounter()
 	}
 
 	frames_counter++;
+
+	std::string fps_s = std::to_string(int(fps)) + "fps";
+	text_service->printText2D(fps_s.c_str(), 0, 550, 40);
 }
 
 void GameplayScreen::LoadAll()
