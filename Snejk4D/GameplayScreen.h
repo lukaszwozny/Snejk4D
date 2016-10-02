@@ -11,6 +11,7 @@
 #include "ControlService.h"
 #include "FoodInfo.h"
 #include "scene_builder.h"
+#include "sound_service.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -30,6 +31,7 @@ public:
 private:
 	bool debug;
 
+	SoundService * sound_service_;
 	ControlService * control_service;
 	CollisionManager collision_manager;
 	SceneBuilder * scene_builder;

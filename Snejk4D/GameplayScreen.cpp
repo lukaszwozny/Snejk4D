@@ -6,6 +6,7 @@ void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 	{
+		SoundService::Music();
 		std::cout << "LMB click\n";
 	}
 }
@@ -31,6 +32,7 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 	glfwSetKeyCallback(window, KeyboardButtonCallback);
 
+	sound_service_ = new SoundService();
 	control_service = new ControlService(window);
 
 	LoadAll();

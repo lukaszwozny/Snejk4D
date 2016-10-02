@@ -26,6 +26,10 @@
     <ClCompile Include="dack_janiels.cpp" />
     <ClCompile Include="FileService.cpp" />
     <ClCompile Include="food.cpp" />
+    <ClCompile Include="framework\aldlist.cpp" />
+    <ClCompile Include="framework\CWaves.cpp" />
+    <ClCompile Include="framework\Framework.cpp" />
+    <ClCompile Include="framework\LoadOAL.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameplayScreen.cpp" />
     <ClCompile Include="main.cpp" />
@@ -55,6 +59,10 @@
     <ClInclude Include="food.h" />
     <ClInclude Include="FoodInfo.h" />
     <ClInclude Include="food_enum.h" />
+    <ClInclude Include="framework\aldlist.h" />
+    <ClInclude Include="framework\CWaves.h" />
+    <ClInclude Include="framework\Framework.h" />
+    <ClInclude Include="framework\LoadOAL.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="GameplayScreen.h" />
     <ClInclude Include="GameStateEnum.h" />
