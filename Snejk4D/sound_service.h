@@ -6,5 +6,6 @@ class SoundService
 public:
 	SoundService();
 	~SoundService();
+	int PlaySnd();
 };
 

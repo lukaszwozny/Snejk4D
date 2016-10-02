@@ -10,3 +10,8 @@ SoundService::SoundService()
 SoundService::~SoundService()
 {
 }
+
+int SoundService::PlaySnd()
+{
+	return 1;
+}

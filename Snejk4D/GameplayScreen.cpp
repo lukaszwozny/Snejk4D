@@ -43,22 +43,6 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	wall_part_ = new Model("models/cube.obj", "textures/scene_metal.bmp");
 	scene_builder = new SceneBuilder();
 	scene_builder->LoadMap(obstacle_vec_);
-
-	std::cout << "Size: " << obstacle_vec_.size() << "\n";
-	for (int i = 0; i<obstacle_vec_.size(); ++i)
-	{
-		glm::vec3 tmp = obstacle_vec_[i]->position;
-		switch (obstacle_vec_[i]->type)
-		{
-		case NONE:
-			std::cout << "NONE \n";
-			break;
-		case WALL:
-			std::cout << "WALL" << tmp.x << " " << tmp.y << " " << tmp.z <<  "\n";
-//			wall_part_->Display(temp);
-			break;
-		}
-	}
 }
 
 GameplayScreen::~GameplayScreen()

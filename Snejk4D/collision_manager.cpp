@@ -72,7 +72,7 @@ void CollisionManager::CheckObstackle(std::vector<Obstacle*>& obstacle_vec)
 			float z_pos = obstacle_vec[i]->position.z;
 			if (!(abs(head_xpos - x_pos) > 2 || abs(head_zpos - z_pos) > 2))
 			{
-				std::cout << "Bum :(\n";
+				// TODO handle collision
 			}
 		}
 	}
