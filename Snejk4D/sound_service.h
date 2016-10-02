@@ -11,10 +11,6 @@ public:
 	static int LoadMusic();
 	static void PlayMusic();
 	static int DeleteMusic();
-	static void Snejk();
-	static int LoadSnejk();
-	static void PlaySnejk();
-	static int DeleteSnejk();
 private:
 	static ALuint source_music;
 	static ALuint source_snejk;

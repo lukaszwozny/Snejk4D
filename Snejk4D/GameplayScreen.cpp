@@ -8,7 +8,6 @@ void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 	{
-		SoundService::Music();
 		std::cout << "LMB click\n";
 	}
 }
@@ -163,7 +162,7 @@ void GameplayScreen::FPSCounter()
 
 void GameplayScreen::LoadAll()
 {
-//	SoundService::Music();
+	SoundService::Music();
 	snake = new Snake();
 	coke = new Coke();
 	dack_janiels = new DackJaniels();
