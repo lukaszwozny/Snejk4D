@@ -89,8 +89,7 @@ void GameplayScreen::update()
 
 	if (collision_manager.CheckTail())
 	{
-		// TODO Game Over
-		std::cout << "Collison\n";
+		is_over = true;
 	}
 
 	if (debug)
