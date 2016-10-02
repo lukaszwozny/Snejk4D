@@ -92,7 +92,8 @@ void GameplayScreen::update()
 	scene.Display(MVP);
 	snake->Display(MVP, control_service->getSnakePosition(), control_service->getRotateAngle());
 
-	collision_manager.ChaeckFood(food_vec_);
+	collision_manager.CheckFood(food_vec_);
+	collision_manager.CheckObstackle(obstacle_vec_);
 
 	if(collision_manager.CheckTail())
 	{

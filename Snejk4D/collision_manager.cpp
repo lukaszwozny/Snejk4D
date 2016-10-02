@@ -11,7 +11,7 @@ CollisionManager::~CollisionManager()
 {
 }
 
-void CollisionManager::ChaeckFood(std::vector<FoodInfo*>& foods_)
+void CollisionManager::CheckFood(std::vector<FoodInfo*>& foods_)
 {
 	float head_xpos = 0;
 	float head_zpos = 0;
@@ -47,6 +47,36 @@ void CollisionManager::ChaeckFood(std::vector<FoodInfo*>& foods_)
 
 		}
 	}
+}
+
+void CollisionManager::CheckObstackle(std::vector<Obstacle*>& obstacle_vec)
+{
+	float head_xpos = 0;
+	float head_zpos = 0;
+	static bool first = true;
+
+	std::vector<std::queue<glm::vec3>*> position_buffers;
+
+	position_buffers = snake->getPositionBuffers();
+	glm::vec3 pos_test;
+	pos_test = position_buffers[0]->front();
+
+	head_xpos = pos_test.x;
+	head_zpos = pos_test.z;
+
+	for (int i = 0; i< obstacle_vec.size(); ++i)
+	{
+		if(obstacle_vec[i]->type != ObstacleType::NONE)
+		{
+			float x_pos = obstacle_vec[i]->position.x;
+			float z_pos = obstacle_vec[i]->position.z;
+			if (!(abs(head_xpos - x_pos) > 2 || abs(head_zpos - z_pos) > 2))
+			{
+				std::cout << "Bum :(\n";
+			}
+		}
+	}
+
 }
 
 bool CollisionManager::CheckTail()
