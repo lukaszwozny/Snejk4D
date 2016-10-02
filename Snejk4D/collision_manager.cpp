@@ -1,5 +1,6 @@
 #include "collision_manager.h"
 #include <iostream>
+#include "GameplayScreen.h"
 
 
 CollisionManager::CollisionManager()
@@ -72,6 +73,7 @@ void CollisionManager::CheckObstackle(std::vector<Obstacle*>& obstacle_vec)
 			float z_pos = obstacle_vec[i]->position.z;
 			if (!(abs(head_xpos - x_pos) > 2 || abs(head_zpos - z_pos) > 2))
 			{
+				GameplayScreen::is_over = true;
 				// TODO handle collision
 			}
 		}

@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+bool GameplayScreen::is_over = false;
+
 void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
@@ -12,6 +14,7 @@ void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 }
 
 int part_add_n = 0;
+
 void GameplayScreen::KeyboardButtonCallback(GLFWwindow* window, int button, int scancode, int action, int mods)
 {
 	if (button == GLFW_KEY_KP_ADD && action == GLFW_PRESS)
@@ -61,7 +64,8 @@ void GameplayScreen::update()
 	std::string title = "The Snejk 4D @ FPS: " + std::to_string(fps);
 	glfwSetWindowTitle(window, title.c_str());
 
-	control_service->ComputeMatrixFromInput();
+	if (!is_over)
+		control_service->ComputeMatrixFromInput();
 	glm::mat4 ProjectionMatrix = control_service->getProjectionMatrix();
 	glm::mat4 ViewMatrix = control_service->getViewMatrix();
 	glm::mat4 ModelMatrix = glm::mat4(1.0);
@@ -69,25 +73,28 @@ void GameplayScreen::update()
 
 	glm::vec3 test = glm::vec3(1, 1, 1);
 
-//	coke->Display(MVP);
 	glm::mat4 tmp = glm::translate(MVP, glm::vec3(rand_x, 0, rand_z));
 	DisplayFood(MVP);
 	DisplayObstacle(MVP);
 
-	control_service->ComputeMoveMatrixFromInputs();
+	if (!is_over)
+		control_service->ComputeMoveMatrixFromInputs();
 	scene.Display(MVP);
 	snake->Display(MVP, control_service->getSnakePosition(), control_service->getRotateAngle());
 
-	collision_manager.CheckFood(food_vec_);
-	collision_manager.CheckObstackle(obstacle_vec_);
+	if (!is_over)
+	{
+		collision_manager.CheckFood(food_vec_);
+		collision_manager.CheckObstackle(obstacle_vec_);
+	}
 
-	if(collision_manager.CheckTail())
+	if (collision_manager.CheckTail())
 	{
 		// TODO Game Over
 		std::cout << "Collison\n";
 	}
 
-	if(debug)
+	if (debug)
 	{
 		ChangeSnakeSize();
 	}
@@ -95,7 +102,10 @@ void GameplayScreen::update()
 
 void GameplayScreen::render()
 {
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	if (!is_over)
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	else
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	setBackgroundColor();
 	update();
 }
@@ -160,7 +170,7 @@ void GameplayScreen::LoadAll()
 
 void GameplayScreen::DisplayFood(glm::mat4 MVP)
 {
-	for(int i=0; i<food_vec_.size(); ++i)
+	for (int i = 0; i < food_vec_.size(); ++i)
 	{
 		glm::mat4 temp = glm::translate(MVP, food_vec_[i]->position);
 		switch (food_vec_[i]->type)
@@ -177,7 +187,7 @@ void GameplayScreen::DisplayFood(glm::mat4 MVP)
 
 void GameplayScreen::DisplayObstacle(glm::mat4 MVP)
 {
-	for (int i = 0; i<obstacle_vec_.size(); ++i)
+	for (int i = 0; i < obstacle_vec_.size(); ++i)
 	{
 		glm::mat4 temp = glm::translate(MVP, obstacle_vec_[i]->position);
 		switch (obstacle_vec_[i]->type)
