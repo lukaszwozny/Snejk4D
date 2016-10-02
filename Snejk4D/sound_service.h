@@ -8,11 +8,15 @@ public:
 	SoundService();
 	~SoundService();
 	static void Music();
-	static int LoadSnd();
-	static void PlaySnd();
-	static int DeleteSnd();
+	static int LoadMusic();
+	static void PlayMusic();
+	static int DeleteMusic();
+	static void Snejk();
+	static int LoadSnejk();
+	static void PlaySnejk();
+	static int DeleteSnejk();
 private:
-	static ALuint source;
+	static ALuint source_music;
 	static int endWithError(char* msg, int error = 0);
 };
 

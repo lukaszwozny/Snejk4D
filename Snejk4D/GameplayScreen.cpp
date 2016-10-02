@@ -163,6 +163,7 @@ void GameplayScreen::FPSCounter()
 
 void GameplayScreen::LoadAll()
 {
+//	SoundService::Music();
 	snake = new Snake();
 	coke = new Coke();
 	dack_janiels = new DackJaniels();

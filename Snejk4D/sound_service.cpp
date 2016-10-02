@@ -3,13 +3,14 @@
 #include "sound_service.h"
 #include "framework/Framework.h"
 #include <iostream>
-#define	TEST_WAVE_FILE		"sounds/happy_mono.wav"
+#define	MUSIC_WAVE_FILE		"sounds/happy_mono.wav"
+#define	SNEJK_WAVE_FILE		"sounds/happy_mono.wav"
 
-ALuint SoundService::source = 0;
+ALuint SoundService::source_music = 0;
 
 SoundService::SoundService()
 {
-	LoadSnd();
+	LoadMusic();
 }
 
 
@@ -19,16 +20,16 @@ SoundService::~SoundService()
 
 void SoundService::Music()
 {
-	std::thread t1(PlaySnd);
+	std::thread t1(PlayMusic);
 
 	t1.join();
 }
 
-int SoundService::LoadSnd()
+int SoundService::LoadMusic()
 {
 	//Loading of the WAVE file
 	FILE* fp = NULL; //Create FILE pointer for the WAVE file
-	fp = fopen(TEST_WAVE_FILE, "rb"); //Open the WAVE file
+	fp = fopen(MUSIC_WAVE_FILE, "rb"); //Open the WAVE file
 	if (!fp) return endWithError("Failed to open file"); //Could not open file
 	//Variables to store info about the WAVE file (all of them is not needed for OpenAL)
 	char type[4];
@@ -98,7 +99,7 @@ int SoundService::LoadSnd()
 	ALenum format = 0; //The audio format (bits per sample, number of channels)
 
 	alGenBuffers(1, &buffer); //Generate one OpenAL Buffer and link to "buffer"
-	alGenSources(1, &source); //Generate one OpenAL Source and link to "source"
+	alGenSources(1, &source_music); //Generate one OpenAL Source and link to "source"
 	if (alGetError() != AL_NO_ERROR) return endWithError("Error GenSource"); //Error during buffer/source generation
 
 	//Figure out the format of the WAVE file
@@ -135,24 +136,24 @@ int SoundService::LoadSnd()
 	alListenerfv(AL_ORIENTATION, ListenerOri); //Set orientation of the listener
 
 	//Source
-	alSourcei(source, AL_BUFFER, buffer); //Link the buffer to the source
-	alSourcef(source, AL_PITCH, 1.0f); //Set the pitch of the source
-	alSourcef(source, AL_GAIN, 1.0f); //Set the gain of the source
-	alSourcefv(source, AL_POSITION, SourcePos); //Set the position of the source
-	alSourcefv(source, AL_VELOCITY, SourceVel); //Set the velocity of the source
-	alSourcei(source, AL_LOOPING, AL_FALSE); //Set if source is looping sound
+	alSourcei(source_music, AL_BUFFER, buffer); //Link the buffer to the source
+	alSourcef(source_music, AL_PITCH, 1.0f); //Set the pitch of the source
+	alSourcef(source_music, AL_GAIN, 1.0f); //Set the gain of the source
+	alSourcefv(source_music, AL_POSITION, SourcePos); //Set the position of the source
+	alSourcefv(source_music, AL_VELOCITY, SourceVel); //Set the velocity of the source
+	alSourcei(source_music, AL_LOOPING, AL_FALSE); //Set if source is looping sound
 
 
 	return 0;
 }
 
-void SoundService::PlaySnd()
+void SoundService::PlayMusic()
 { //PLAY 
-	alSourcePlay(source); //Play the sound buffer linked to the source
+	alSourcePlay(source_music); //Play the sound buffer linked to the source
 	if (alGetError() != AL_NO_ERROR) return; //Error when playing sound
 }
 
-int SoundService::DeleteSnd()
+int SoundService::DeleteMusic()
 { //Pause to let the sound play
 	//	fclose(fp);                                                                 //Close the WAVE file
 	//	delete[] buf;                                                               //Delete the sound data buffer
