@@ -36,6 +36,7 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 
 	sound_service_ = new SoundService();
 	control_service = new ControlService(window);
+	text_service = new Text2DService();
 
 	LoadAll();
 	collision_manager.setSnake(snake); //TODO change to pointer
@@ -80,6 +81,8 @@ void GameplayScreen::update()
 		control_service->ComputeMoveMatrixFromInputs();
 	scene.Display(MVP);
 	snake->Display(MVP, control_service->getSnakePosition(), control_service->getRotateAngle());
+
+	text_service->printText2D("test", 500, 500, 60);
 
 	if (!is_over)
 	{

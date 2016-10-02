@@ -12,6 +12,7 @@
 #include "FoodInfo.h"
 #include "scene_builder.h"
 #include "sound_service.h"
+#include "Text2DService.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -36,6 +37,7 @@ private:
 	ControlService * control_service;
 	CollisionManager collision_manager;
 	SceneBuilder * scene_builder;
+	Text2DService * text_service;
 
 	Scene scene;
 
