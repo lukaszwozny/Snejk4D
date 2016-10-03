@@ -132,12 +132,6 @@
     <ClCompile Include="framework\aldlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="framework\CWaves.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="framework\Framework.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="framework\LoadOAL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -243,12 +237,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="framework\aldlist.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="framework\CWaves.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="framework\Framework.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="framework\LoadOAL.h">

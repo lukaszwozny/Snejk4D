@@ -5,7 +5,7 @@ Snake::Snake()
 {
 	speed = 10.0f;
 	size = 0;
-	buffer_size = 200.0f / speed;
+	buffer_size = 150.0f / speed;
 	for (int i = 0; i < MIN_SIZE; ++i)
 		AddPart();
 }
