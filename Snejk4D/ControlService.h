@@ -17,6 +17,8 @@ public:
 	glm::vec3 getSnakePosition();
 	float getRotateAngle();
 
+	void setSnakePosition(const glm::vec3& snake_position);
+	void SetRotateSnakeAngle(float rotate_snake_angle);
 	void setSnake(Snake* snake);
 private:
 	GLFWwindow* window_;

@@ -5,6 +5,7 @@
 
 bool GameplayScreen::is_over = false;
 
+bool reset = false;
 bool is_again = false;
 bool is_menu = false;
 
@@ -15,12 +16,12 @@ void GameplayScreen::MouseButtonCallback(GLFWwindow* window, int button, int act
 		std::cout << "LMB click\n";
 		if(is_again)
 		{
-			std::cout << "Again\n";
 			is_again = false;
+			is_over = false;
+			reset = true;
 		}
 		if (is_menu)
 		{
-			std::cout << "menu\n";
 			is_menu = false;
 		}
 	}
@@ -56,12 +57,16 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	collision_manager.setSnake(snake); //TODO change to pointer
 	control_service->setSnake(snake);
 
-	food_vec_.push_back(new FoodInfo(FoodEnum::COKE));
-	food_vec_.push_back(new FoodInfo(FoodEnum::DACK_JANIELS));
-
 	wall_part_ = new Model("models/cube.obj", "textures/scene_metal.bmp");
-	scene_builder = new SceneBuilder();
-	scene_builder->LoadMap(obstacle_vec_);
+	scene_builder = new SceneBuilder(&obstacle_vec_,&food_vec_);
+	scene_builder->LoadMap();
+	collision_manager.setSceneBuilder(scene_builder);
+
+	scene_builder->AddFood(FoodEnum::COKE);
+	scene_builder->AddFood(FoodEnum::COKE);
+	scene_builder->AddFood(FoodEnum::COKE);
+	scene_builder->AddFood(FoodEnum::COKE);
+	std::cout << food_vec_.size() << " size\n";
 }
 
 GameplayScreen::~GameplayScreen()
@@ -98,7 +103,7 @@ void GameplayScreen::update()
 
 	if (!is_over)
 	{
-		collision_manager.CheckFood(food_vec_);
+		collision_manager.CheckFood(food_vec_, obstacle_vec_);
 		collision_manager.CheckObstackle(obstacle_vec_);
 	}
 
@@ -163,10 +168,17 @@ void GameplayScreen::update()
 		text_service->printText2D(main_menu, x_pos, y_pos, size);
 	}
 
-	if (collision_manager.CheckTail())
+	if (reset)
 	{
-		is_over = true;
+		control_service->setSnakePosition(glm::vec3(0, 0, 0));
+		control_service->SetRotateSnakeAngle(0.0f);
+		reset = false;
 	}
+
+//	if (collision_manager.CheckTail())
+//	{
+//		is_over = true;
+//	}
 
 	if (debug)
 	{

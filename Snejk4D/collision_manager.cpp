@@ -12,7 +12,7 @@ CollisionManager::~CollisionManager()
 {
 }
 
-void CollisionManager::CheckFood(std::vector<FoodInfo*>& foods_)
+void CollisionManager::CheckFood(std::vector<FoodInfo*>& foods_, std::vector<Obstacle*>& obstacle_vec)
 {
 	float head_xpos = 0;
 	float head_zpos = 0;
@@ -41,11 +41,9 @@ void CollisionManager::CheckFood(std::vector<FoodInfo*>& foods_)
 			case DACK_JANIELS:
 				break;
 			}
-			foods_.push_back(new FoodInfo(foods_[i]->type));
-
 			delete foods_[i];
 			foods_.erase(foods_.begin() + i);
-
+			scene_builder_->AddFood(FoodEnum::COKE);
 		}
 	}
 }
@@ -120,4 +118,9 @@ bool CollisionManager::CheckTail()
 void CollisionManager::setSnake(Snake* snake)
 {
 	this->snake = snake;
+}
+
+void CollisionManager::setSceneBuilder(SceneBuilder* scene_builder)
+{
+	scene_builder_ = scene_builder;
 }

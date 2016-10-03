@@ -241,6 +241,16 @@ float ControlService::getRotateAngle()
 	return rotate_snake_angle;
 }
 
+void ControlService::setSnakePosition(const glm::vec3& snake_position)
+{
+	this->snake_position = snake_position;
+}
+
+void ControlService::SetRotateSnakeAngle(float rotate_snake_angle)
+{
+	this->rotate_snake_angle = rotate_snake_angle;
+}
+
 void ControlService::setSnake(Snake* snake)
 {
 	this->snake = snake;

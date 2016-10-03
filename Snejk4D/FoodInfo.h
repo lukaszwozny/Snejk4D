@@ -9,17 +9,15 @@ struct FoodInfo
 	{
 		this->type = type;
 
-		int pos_x = rand() % Scene::WIDTH - Scene::WIDTH / 2;
-		int pos_z = rand() % Scene::HEIGHT - Scene::HEIGHT / 2;
-		position = glm::vec3(pos_x, 0, pos_z);
+		position = glm::vec3(0, 0, 0);
 	}
 
 	FoodInfo()
 	{
 		type = FoodEnum(rand() % 2);
 
-		int pos_x = rand() % Scene::WIDTH - Scene::WIDTH / 2;
-		int pos_z = rand() % Scene::HEIGHT - Scene::HEIGHT / 2;
+		int pos_x = 0;
+		int pos_z = 0;
 		position = glm::vec3(pos_x, 0, pos_z);
 	}
 	FoodEnum type;
