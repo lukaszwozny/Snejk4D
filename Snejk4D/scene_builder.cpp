@@ -31,8 +31,6 @@ void SceneBuilder::AddFood(FoodEnum type)
 		int pos_x = rand() % (WIDTH - 2) + START_X + 1;
 		int pos_z = rand() % (HEIGHT - 2) + START_Y + 1;
 
-		std::cout << pos_x << " " << pos_z << "\n";
-
 		tmp = new FoodInfo(type);
 		tmp->position = glm::vec3(pos_x, 0, pos_z);
 
@@ -51,8 +49,6 @@ void SceneBuilder::AddFood(FoodEnum type)
 void SceneBuilder::LoadMap()
 {
 	FileService::LoadMap("maps/forest.txt", map_);
-	std::cout << map_.width << "\n";
-	std::cout << map_.height << "\n";
 
 	const int OFFSET_X = map_.width / 2;
 	const int OFFSET_Y = map_.height / 2;
@@ -85,7 +81,6 @@ bool SceneBuilder::CheckNewFood(FoodInfo* food)
 			const float RADIUS = 3;
 			if (!(abs(food->position.x - obst_x) > RADIUS || abs(food->position.z - obst_z) > RADIUS))
 			{
-				std::cout << "New food\n";
 				return false;
 			}
 		}
