@@ -19,6 +19,7 @@ class GameplayScreen
 {
 public:
 	static bool is_over;
+	static int high_score;
 	static void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
 	static void KeyboardButtonCallback(GLFWwindow* window, int button, int scancode, int action, int mods);
 	GameplayScreen(GLFWwindow* window);

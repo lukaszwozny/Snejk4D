@@ -14,7 +14,7 @@ public:
 
 	void CheckFood(std::vector<FoodInfo*> & foods_, std::vector<Obstacle*>& obstacle_vec);
 	void CheckObstackle(std::vector<Obstacle*> & obstacle_vec);
-	bool CheckTail();
+	void CheckTail();
 
 	void setSnake(Snake* snake);
 

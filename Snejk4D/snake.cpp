@@ -35,6 +35,14 @@ bool Snake::RemovePart()
 	return true;
 }
 
+bool Snake::Reset()
+{
+	while (size>MIN_SIZE)
+	{
+		RemovePart();
+	}
+}
+
 void Snake::Display(glm::mat4 MVP, glm::vec3 snake_position, float angle)
 {
 	position_buffers_[0]->push(snake_position);

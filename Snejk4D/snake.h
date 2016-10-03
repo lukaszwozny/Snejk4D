@@ -12,6 +12,7 @@ public:
 	~Snake();
 	bool AddPart();
 	bool RemovePart();
+	bool Reset();
 	void Display(glm::mat4 MVP, glm::vec3 snake_position, float angle);
 	int getSize();
 	std::vector < std::queue <glm::vec3>* > getPositionBuffers();

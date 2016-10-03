@@ -79,7 +79,7 @@ void CollisionManager::CheckObstackle(std::vector<Obstacle*>& obstacle_vec)
 
 }
 
-bool CollisionManager::CheckTail()
+void CollisionManager::CheckTail()
 {
 	static double lastTime = glfwGetTime();
 	double currentTime = glfwGetTime();
@@ -104,15 +104,18 @@ bool CollisionManager::CheckTail()
 		head_zpos = pos_test.z;
 
 
-		for (int i = 15; i < snake->getSize(); ++i)
+		for (int i = 15; i < snake->getSize()-1; ++i)
 		{
 			glm::vec3 old_pos;
 			old_pos = position_buffers[i]->front();
-			if (!(abs(head_xpos - old_pos.x) > 2 || abs(head_zpos - old_pos.z) > 2))
-				return true;
+			const float RADIUS = 2.0f;
+			if (!(abs(head_xpos - old_pos.x) > RADIUS || abs(head_zpos - old_pos.z) > RADIUS))
+			{
+				GameplayScreen::is_over = true;
+				return;
+			}
 		}
 	}
-	return false;
 }
 
 void CollisionManager::setSnake(Snake* snake)
