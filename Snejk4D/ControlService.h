@@ -50,7 +50,7 @@ private:
 
 	float move_snake_speed = 10.0f; // 3 units / second
 	float rotate_snake_angle = 0.0;
-	float rotate_snake_speed = move_snake_speed*0.002f;
+	float rotate_snake_speed = move_snake_speed*0.003f;
 
 	double mouse_x_, mouse_y_;
 

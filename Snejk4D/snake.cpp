@@ -1,11 +1,13 @@
 #include "snake.h"
+#include <iostream>
 
 
 Snake::Snake()
 {
 	speed = 10.0f;
 	size = 0;
-	buffer_size = 200.0f / speed;
+	buffer_size = 180.0f/speed;
+	std::cout << buffer_size << " buffer\n";
 	for (int i = 0; i < MIN_SIZE; ++i)
 		AddPart();
 }
