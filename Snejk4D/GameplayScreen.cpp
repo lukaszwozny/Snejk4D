@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "game.h"
+#include "FileService.h"
 
 bool GameplayScreen::is_over = false;
 int GameplayScreen::high_score = 0;
@@ -45,6 +46,7 @@ void GameplayScreen::KeyboardButtonCallback(GLFWwindow* window, int button, int 
 GameplayScreen::GameplayScreen(GLFWwindow* window)
 	: AbstractScreen(window)
 {
+	FileService::LoadHighScore();
 	debug = true;
 
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
@@ -148,7 +150,10 @@ void GameplayScreen::update()
 		// again? position
 		size = 30;
 		if (snake->getSize() - 7 > high_score)
+		{
 			high_score = snake->getSize() - 7;
+			FileService::SaveHighScore();
+		}
 		std::string high_score_text = "High score: " + std::to_string(high_score);
 		x_pos = 0;
 		y_pos = 0;

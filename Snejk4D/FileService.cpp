@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include "GameplayScreen.h"
 #pragma warning (disable : 4996)
 
 GLuint FileService::LoadBMP(const char* imagepath)
@@ -409,6 +410,34 @@ bool FileService::LoadMap(const char* path, Map & map)
 			map.map[i][j] = val;
 		}
 	}
+
+	file.close();
+
+	return true;
+}
+
+bool FileService::LoadHighScore()
+{
+	const char * path = "shaders/Shader.vertexshader";
+	std::ifstream file(path);
+	int hs;
+
+	file >> hs;
+	GameplayScreen::high_score = hs;
+
+	file.close();
+
+	return true;
+}
+
+bool FileService::SaveHighScore()
+{
+	const char * path = "shaders/Shader.vertexshader";
+	std::ofstream file(path);
+	int hs;
+	hs = GameplayScreen::high_score;
+
+	file << hs;
 
 	file.close();
 
