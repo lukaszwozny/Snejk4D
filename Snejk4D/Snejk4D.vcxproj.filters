@@ -129,13 +129,13 @@
     <ClCompile Include="sound_service.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="framework\aldlist.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="framework\LoadOAL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Text2DService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="time_element.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -236,13 +236,13 @@
     <ClInclude Include="sound_service.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="framework\aldlist.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="framework\LoadOAL.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Text2DService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="time_element.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

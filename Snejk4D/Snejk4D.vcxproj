@@ -26,7 +26,6 @@
     <ClCompile Include="dack_janiels.cpp" />
     <ClCompile Include="FileService.cpp" />
     <ClCompile Include="food.cpp" />
-    <ClCompile Include="framework\aldlist.cpp" />
     <ClCompile Include="framework\LoadOAL.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameplayScreen.cpp" />
@@ -45,6 +44,7 @@
     <ClCompile Include="sound_service.cpp" />
     <ClCompile Include="Text2DService.cpp" />
     <ClCompile Include="TexturedRextangle.cpp" />
+    <ClCompile Include="time_element.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScreen.h" />
@@ -58,7 +58,6 @@
     <ClInclude Include="food.h" />
     <ClInclude Include="FoodInfo.h" />
     <ClInclude Include="food_enum.h" />
-    <ClInclude Include="framework\aldlist.h" />
     <ClInclude Include="framework\LoadOAL.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="GameplayScreen.h" />
@@ -82,6 +81,7 @@
     <ClInclude Include="sound_service.h" />
     <ClInclude Include="Text2DService.h" />
     <ClInclude Include="TexturedRextangle.h" />
+    <ClInclude Include="time_element.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{698DE376-4841-4A48-8C49-CB43130C82E3}</ProjectGuid>

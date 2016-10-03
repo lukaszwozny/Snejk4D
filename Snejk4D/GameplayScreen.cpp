@@ -49,6 +49,8 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	FileService::LoadHighScore();
 	debug = true;
 
+	time_eleent.updatePrevTime();
+
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
 	glfwSetKeyCallback(window, KeyboardButtonCallback);
 
@@ -177,12 +179,17 @@ void GameplayScreen::update()
 
 void GameplayScreen::render()
 {
+	time_eleent.updateActualTime();
+
 	if (!is_over)
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	else
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	setBackgroundColor();
 	update();
+
+	std::cout << "Elapsed: " << time_eleent.getElapsedTime() << "\n";
+	time_eleent.updatePrevTime();
 }
 
 void GameplayScreen::setBackgroundColor()

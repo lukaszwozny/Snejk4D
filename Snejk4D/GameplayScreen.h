@@ -13,6 +13,7 @@
 #include "scene_builder.h"
 #include "sound_service.h"
 #include "Text2DService.h"
+#include "time_element.h"
 
 class GameplayScreen
 	:public AbstractScreen
@@ -33,6 +34,8 @@ public:
 
 private:
 	bool debug;
+
+	TimeElement time_eleent;
 
 	SoundService * sound_service_;
 	ControlService * control_service;
