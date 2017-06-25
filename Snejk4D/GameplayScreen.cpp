@@ -70,7 +70,7 @@ GameplayScreen::GameplayScreen(GLFWwindow* window)
 	scene_builder->AddFood(FoodEnum::COKE);
 	scene_builder->AddFood(FoodEnum::COKE);
 	scene_builder->AddFood(FoodEnum::COKE);
-	scene_builder->AddFood(FoodEnum::COKE);
+	scene_builder->AddFood(FoodEnum::DACK_JANIELS);
 	std::cout << food_vec_.size() << " size\n";
 }
 
